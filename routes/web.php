@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login/post',[LoginController::class,'loginPost'])->name('loginPost');
+
+Route::prefix('/admin')->group(function () {
+  Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+  });
 });
