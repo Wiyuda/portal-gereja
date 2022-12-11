@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PriestController;
 use App\Http\Controllers\Admin\ProfilController;
+use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -32,5 +33,6 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/admin', AdminController::class);
     Route::resource('/profil', ProfilController::class);
     Route::resource('/pastur', PriestController::class);
+    Route::resource('/sektor', SectorController::class);
   });
 });

@@ -1,13 +1,12 @@
 @extends('layouts.dashboard')
-@section('title', 'Admin | Daftar Data Pastur')
-
+@section('title', 'Admin | Data Sektor')
 @section('content')
   <div class="row">
     <div class="col-12">
       <div class="card shadow">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <h6 class="fw-bold">Daftar Data Pastur</h6>
-          <a href="{{ route('pastur.create') }}" class="btn btn-primary">Tambah Pastur</a>
+          <h6 class="fw-bold">Data Sektor</h6>
+          <a href="{{ route('sektor.create') }}" class="btn btn-primary">Tambah Sektor</a>
         </div>
         <div class="card-body">
           @if (session('status'))
@@ -23,10 +22,8 @@
               <thead>
                 <tr>
                   <th>No</th>
+                  <th>Sektor</th>
                   <th>Nama</th>
-                  <th>Jabatan</th>
-                  <th>Tanggal Masuk</th>
-                  <th>Tanggal Keluar</th>
                   <th>Keterangan</th>
                   <th width="11%">Aksi</th>
                 </tr>
@@ -34,10 +31,8 @@
               <tfoot>
                 <tr>
                   <th>No</th>
+                  <th>Sektor</th>
                   <th>Nama</th>
-                  <th>Jabatan</th>
-                  <th>Tanggal Masuk</th>
-                  <th>Tanggal Keluar</th>
                   <th>Keterangan</th>
                   <th width="11%">Aksi</th>
                 </tr>
@@ -46,19 +41,17 @@
                 @php
                   $i = 1;
                 @endphp
-                @foreach ($priests as $priest)
+                @foreach ($sectors as $sector)
                   <tr>
                     <td>{{ $i++ }}</td>
-                    <td>{{ $priest->nama }}</td>
-                    <td>{{ $priest->jabatan }}</td>
-                    <td>{{ $priest->tanggal_masuk }}</td>
-                    <td>{{ $priest->tanggal_keluar }}</td>
-                    <td>{{ $priest->keterangan }}</td>
+                    <td>{{ $sector->sektor }}</td>
+                    <td>{{ $sector->nama }}</td>
+                    <td>{{ $sector->keterangan }}</td>
                     <td width="11%">
-                      <a href="{{ route('pastur.edit', $priest->id) }}" class="btn btn-success">
+                      <a href="{{ route('sektor.edit', $sector->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>
                       </a>
-                      <form action="{{ route('pastur.destroy', $priest->id) }}" method="POST" class="d-inline">
+                      <form action="{{ route('sektor.destroy', $sector->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">
