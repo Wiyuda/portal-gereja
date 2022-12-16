@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FamilyController;
 use App\Http\Controllers\Admin\PriestController;
 use App\Http\Controllers\Admin\ProfilController;
 use App\Http\Controllers\Admin\SectorController;
@@ -34,5 +35,6 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/profil', ProfilController::class);
     Route::resource('/pastur', PriestController::class);
     Route::resource('/sektor', SectorController::class);
+    Route::resource('/keluarga', FamilyController::class);
   });
 });
