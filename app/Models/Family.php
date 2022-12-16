@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Sector extends Model
+class Family extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['sektor', 'nama', 'keterangan'];
+    protected $fillable = ['no_registrasi', 'sector_id', 'keluarga'];
 
-    public function families()
+    public function sectors()
     {
-        return $this->hasMany(Family::class, 'id');
+        return $this->belongsTo(Sector::class, 'sector_id');
     }
 }

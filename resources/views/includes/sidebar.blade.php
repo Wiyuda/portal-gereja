@@ -46,6 +46,12 @@
       <span>Sektor</span>
     </a>
   </li>
+  <li class="nav-item mb-0">
+    <a class="nav-link mb-0 pb-0" href="{{ route('keluarga.index') }}">
+      <i class="fas fa-male"></i>
+      <span>Keluarga</span>
+    </a>
+  </li>
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
       <i class="fas fa-fw fa-cog"></i>
