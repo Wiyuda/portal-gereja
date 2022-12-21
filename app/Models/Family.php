@@ -16,4 +16,9 @@ class Family extends Model
     {
         return $this->belongsTo(Sector::class, 'sector_id');
     }
+
+    public function familyMembers()
+    {
+        return $this->hasMany(FamilyMember::class, 'id');
+    }
 }
