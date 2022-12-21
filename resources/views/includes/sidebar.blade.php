@@ -47,17 +47,24 @@
     </a>
   </li>
   <li class="nav-item mb-0">
-    <a class="nav-link mb-0 pb-0" href="{{ route('keluarga.index') }}">
-      <i class="fas fa-male"></i>
-      <span>Keluarga</span>
+    <a class="nav-link collapsed mb-0 pb-0" href="#" data-toggle="collapse" data-target="#keluarga" aria-expanded="true" aria-controls="keluarga">
+      <i class="fas fa-fw fa-male"></i>
+      <span>Master Keluarga</span>
     </a>
+    <div id="keluarga" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Data Keluarga</h6>
+        <a class="collapse-item" href="{{ route('keluarga.index') }}">Keluarga</a>
+        <a class="collapse-item" href="{{ route('member.index') }}">Anggota Keluarga</a>
+      </div>
+    </div>
   </li>
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+  <li class="nav-item mb-0">
+    <a class="nav-link mb-0 pb-0 collapsed" href="#" data-toggle="collapse" data-target="#akun" aria-expanded="true" aria-controls="akun">
       <i class="fas fa-fw fa-cog"></i>
       <span>Setting</span>
     </a>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div id="akun" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Akun</h6>
         <a class="collapse-item" href="{{ route('admin.index') }}">Admin</a>
