@@ -28,7 +28,7 @@
                 <label for="kawin">Kawin</label>
                 <select name="kawin"  id="kawin" class="form-control @error('kawin') is-invalid @enderror">
                   <option>--Pilih Status--</option>
-                  @foreach ($data as $married)
+                  @foreach ($statuses as $married)
                   <option value="{{ $married }}">{{ $married }}</option>
                   @endforeach
                 </select>

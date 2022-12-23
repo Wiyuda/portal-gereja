@@ -18,9 +18,9 @@ class MarriedController extends Controller
 
     public function create()
     {
-        $data = ['single', 'kawin'];
+        $statuses = ['single', 'kawin'];
         $families = Family::all();
-        return view('dashboard.married.create', compact('families', 'data'));
+        return view('dashboard.married.create', compact('families', 'statuses'));
     }
 
     public function store(Request $request)
@@ -38,12 +38,11 @@ class MarriedController extends Controller
 
     public function edit($id)
     {
-        $data = ['single', 'kawin'];
-        $sectors = Sector::all();
+        $statuses = ['single', 'kawin'];
         $families = Family::all();
         $married = Married::find($id);
         
-        return view('dashboard.married.edit', compact('sectors', 'married', 'families', 'data'));
+        return view('dashboard.married.edit', compact('married', 'families', 'statuses'));
     }
 
     public function update(Request $request, $id)

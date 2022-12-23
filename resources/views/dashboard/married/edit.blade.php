@@ -35,7 +35,7 @@
                 <label for="kawin">Kawin</label>
                 <select name="kawin" id="kawin" value="{{ $married->kawin }}" class="form-control @error('kawin') is-invalid @enderror" required>
                   <option>--Pilih Status--</option>
-                  @foreach ($data as $status)                      
+                  @foreach ($statuses as $status)                      
                     <option value="{{ $status }}">{{ $status }}</option>
                   @endforeach
                 </select>
@@ -60,7 +60,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary mr-3">Edit Keluarga</button>
+              <button type="submit" class="btn btn-primary mr-3">Edit Kawin</button>
               <a href="{{ route('kawin.index') }}" class="btn btn-warning">Kembali</a>
             </div>
           </form>
