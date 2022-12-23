@@ -18,9 +18,9 @@ class MarriedController extends Controller
 
     public function create()
     {
-        $sectors = Sector::all();
+        $data = ['single', 'kawin'];
         $families = Family::all();
-        return view('dashboard.married.create', compact('families', 'sectors'));
+        return view('dashboard.married.create', compact('families', 'data'));
     }
 
     public function store(Request $request)
@@ -38,27 +38,24 @@ class MarriedController extends Controller
 
     public function edit($id)
     {
+        $data = ['single', 'kawin'];
         $sectors = Sector::all();
         $families = Family::all();
         $married = Married::find($id);
         
-        return view('dashboard.married.edit', compact('sectors', 'married', 'families'));
+        return view('dashboard.married.edit', compact('sectors', 'married', 'families', 'data'));
     }
 
     public function update(Request $request, $id)
     {
-        // $validate = $request->validate([
-        //     'family_id' => 'required',
-        //     'kawin' => 'required',
-        //     'tanggal' => 'required|date',
-        //     'gereja' => 'required',
-        // ]);
+        $validate = $request->validate([
+            'family_id' => 'required',
+            'kawin' => 'required',
+            'tanggal' => 'required|date',
+            'gereja' => 'required',
+        ]);
 
-        // $married = Married::find($id)->update($validate);
-        
-        $data = Married::find($id);
-        $data->update($request->all());
-        // dd($data);
+        $married = Married::find($id)->update($validate);
 
         return redirect()->route('kawin.index')->with('status', 'Data Kawin Berhasil di Update');
     }

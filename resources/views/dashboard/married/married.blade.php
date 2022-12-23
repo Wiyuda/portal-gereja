@@ -48,7 +48,7 @@
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $married->kawin }}</td>
-                    <td>{{ $married->families->family }} / {{$married->families->nama }}</td>
+                    <td>{{ $married->families->keluarga }}</td>
                     <td>{{ $married->tanggal }}</td>
                     <td>{{ $married->gereja }}</td>
                     <td width="11%">

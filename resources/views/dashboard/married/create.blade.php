@@ -15,8 +15,8 @@
                 <label for="family">Keluarga</label>
                 <select name="family_id" id="family" class="form-control @error('family_id') is-invalid @enderror">
                   <option>--Pilih Keluarga--</option>
-                  @foreach ($sectors as $sector)
-                    <option value="{{ $sector->id }}">{{ $sector->nama }}</option>
+                  @foreach ($families as $family)
+                    <option value="{{ $family->id }}">{{ $family->keluarga }}</option>
                   @endforeach
                 </select>
                 @error('family_id')
@@ -26,10 +26,11 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="kawin">Kawin</label>
-                <select name="kawin" id="kawin" class="form-control @error('kawin') is-invalid @enderror">
+                <select name="kawin"  id="kawin" class="form-control @error('kawin') is-invalid @enderror">
                   <option>--Pilih Status--</option>
-                  <option value="kawin">Kawin</option>
-                  <option value="single">Single</option>
+                  @foreach ($data as $married)
+                  <option value="{{ $married }}">{{ $married }}</option>
+                  @endforeach
                 </select>
               </div>
             </div>

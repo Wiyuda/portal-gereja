@@ -14,14 +14,14 @@
             @method('put')
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="sektor">Keluarga</label>
-                <select name="sector_id" id="sektor" class="form-control @error('sector_id') is-invalid @enderror" required>
+                <label for="family">Keluarga</label>
+                <select name="family_id" id="family" class="form-control @error('family_id') is-invalid @enderror" required>
                   <option>--Pilih Keluarga--</option>
-                  @foreach ($sectors as $sector)
-                    @if ($married->sector_id == $sector->id)
-                      <option value="{{ $sector->id }}" selected>{{ $sector->nama }}</option>
+                  @foreach ($families as $family)
+                    @if ($married->family_id == $family->id)
+                      <option value="{{ $family->id }}" selected>{{ $family->keluarga }}</option>
                     @else
-                      <option value="{{ $sector->id }}">{{ $sector->nama }}</option>
+                      <option value="{{ $family->id }}">{{ $family->nama }}</option>
                     @endif
                   @endforeach
                 </select>
@@ -35,8 +35,9 @@
                 <label for="kawin">Kawin</label>
                 <select name="kawin" id="kawin" value="{{ $married->kawin }}" class="form-control @error('kawin') is-invalid @enderror" required>
                   <option>--Pilih Status--</option>
-                  <option value="kawin">Kawin</option>
-                  <option value="single">Single</option>
+                  @foreach ($data as $status)                      
+                    <option value="{{ $status }}">{{ $status }}</option>
+                  @endforeach
                 </select>
               </div>
             </div>
