@@ -62,6 +62,7 @@
         <h6 class="collapse-header">Data Keluarga</h6>
         <a class="collapse-item" href="{{ route('keluarga.index') }}">Keluarga</a>
         <a class="collapse-item" href="{{ route('member.index') }}">Anggota Keluarga</a>
+        <a class="collapse-item" href="{{ route('sidi.index') }}">Sidi</a>
       </div>
     </div>
   </li>

@@ -16,4 +16,9 @@ class FamilyMember extends Model
     {
         return $this->belongsTo(Family::class, 'family_id');
     }
+
+    public function sidis()
+    {
+        return $this->hasOne(Sidi::class, 'id');
+    }
 }
