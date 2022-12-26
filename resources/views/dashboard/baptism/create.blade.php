@@ -15,8 +15,8 @@
               <label for="family_member_id">Keluarga</label>
               <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror" required>
                 <option>--Pilih Keluarga--</option>
-                @foreach ($family_members as $family_member)
-                  <option value="{{ $family_member->id }}">{{ $family_member->nama }}</option>
+                @foreach ($family_members as $fm)
+                  <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
                 @endforeach
               </select>
               @error('family_member_id')
