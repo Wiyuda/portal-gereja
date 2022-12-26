@@ -21,4 +21,9 @@ class FamilyMember extends Model
     {
         return $this->hasOne(Sidi::class, 'id');
     }
+
+    public function mondings()
+    {
+        return $this->hasOne(Monding::class, 'id');
+    }
 }

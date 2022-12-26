@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FamilyController;
 use App\Http\Controllers\Admin\FamilyMemberController;
 use App\Http\Controllers\Admin\MarriedController;
+use App\Http\Controllers\Admin\MondingController;
 use App\Http\Controllers\Admin\PriestController;
 use App\Http\Controllers\Admin\ProfilController;
 use App\Http\Controllers\Admin\SectorController;
@@ -42,5 +43,6 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/member', FamilyMemberController::class);
     Route::resource('/kawin', MarriedController::class);
     Route::resource('/sidi', SidiController::class);
+    Route::resource('/monding', MondingController::class);
   });
 });
