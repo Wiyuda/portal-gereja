@@ -18,7 +18,7 @@
                   <option>--Pilih Keluarga--</option>
                   @foreach ($family_members as $fm)
                     @if ($baptism->family_member_id == $fm->id)
-                      <option value="{{ $fm->id }}" selected>{{ $fm->nama }}</option>
+                      <option value="{{ $fm->id }}" selected>{{ $fm->nama }}</option>                
                     @else
                       <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
                     @endif
