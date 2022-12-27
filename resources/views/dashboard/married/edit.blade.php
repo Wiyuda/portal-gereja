@@ -21,11 +21,11 @@
                     @if ($married->family_id == $family->id)
                       <option value="{{ $family->id }}" selected>{{ $family->keluarga }}</option>
                     @else
-                      <option value="{{ $family->id }}">{{ $family->nama }}</option>
+                      <option value="{{ $family->id }}">{{ $family->keluarga }}</option>
                     @endif
                   @endforeach
                 </select>
-                @error('sector_id')
+                @error('family_id')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
@@ -35,8 +35,12 @@
                 <label for="kawin">Kawin</label>
                 <select name="kawin" id="kawin" value="{{ $married->kawin }}" class="form-control @error('kawin') is-invalid @enderror" required>
                   <option>--Pilih Status--</option>
-                  @foreach ($statuses as $status)                      
-                    <option value="{{ $status }}">{{ $status }}</option>
+                  @foreach ($statuses as $status)
+                    @if ($status == $married->kawin)
+                      <option value="{{ $status }}" selected>{{ $status }}</option>
+                    @else
+                      <option value="{{ $status }}">{{ $status }}</option>
+                    @endif                     
                   @endforeach
                 </select>
               </div>

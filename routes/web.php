@@ -1,19 +1,20 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\FamilyController;
-use App\Http\Controllers\Admin\FamilyMemberController;
-use App\Http\Controllers\Admin\MarriedController;
-use App\Http\Controllers\Admin\MondingController;
-use App\Http\Controllers\Admin\PriestController;
-use App\Http\Controllers\Admin\ProfilController;
-use App\Http\Controllers\Admin\SectorController;
-use App\Http\Controllers\Admin\SidiController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\SidiController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\FamilyController;
+use App\Http\Controllers\Admin\PriestController;
+use App\Http\Controllers\Admin\ProfilController;
+use App\Http\Controllers\Admin\SectorController;
+use App\Http\Controllers\Admin\BaptismController;
+use App\Http\Controllers\Admin\MarriedController;
+use App\Http\Controllers\Admin\MondingController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FamilyMemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,6 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/kawin', MarriedController::class);
     Route::resource('/sidi', SidiController::class);
     Route::resource('/monding', MondingController::class);
+    Route::resource('/baptis', BaptismController::class);
   });
 });
