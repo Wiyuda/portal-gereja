@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('baptisms', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('anggota_keluarga_id')->constrained('family_members')
+            $table->foreignId('family_member_id')->constrained('family_members')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->enum('baptis', ['baptis', 'belum baptis']);

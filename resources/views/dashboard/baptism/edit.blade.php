@@ -13,14 +13,22 @@
             @csrf
             @method('put')
             <div class="form-group col-md-6">
-                <label for="anggota_keluarga_id">Keluarga</label>
-                <select name="anggota_keluarga_id" id="anggota_keluarga_id" class="form-control @error('anggota_keluarga_id') is-invalid @enderror" required>
+                <label for="family_member_id">Keluarga</label>
+                <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror" required>
                   <option>--Pilih Keluarga--</option>
-                  @foreach ($families as $family)
+                  {{-- @foreach ($families as $family)
                     <option value="{{ $family->id }}">{{ $family->keluarga }}</option>
+                  @endforeach --}}
+
+                  @foreach ($family_members as $fm)
+                    @if ($baptism->family_member_id == $fm->id)
+                      <option value="{{ $fm->id }}" selected>{{ $fm->nama }}</option>
+                    @else
+                      <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
+                    @endif
                   @endforeach
                 </select>
-                @error('anggota_keluarga_id')
+                @error('family_member_id')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
@@ -30,7 +38,11 @@
                   <select name="baptis" id="baptis" class="form-control @error('baptis') is-invalid @enderror">
                     <option>--Pilih Status--</option>
                     @foreach ($statuses as $status)
-                    <option value="{{ $status }}">{{ $status }}</option>
+                    @if ($status == $baptism->baptis)
+                        <option value="{{ $status }}" selected>{{ $status }}</option>
+                    @else
+                        <option value="{{ $status }}">{{ $status }}</option>
+                    @endif
                     @endforeach
                   </select>
                 </div>

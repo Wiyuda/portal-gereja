@@ -28,7 +28,7 @@ class BaptismController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'anggota_keluarga_id' => 'required',
+            'family_member_id' => 'required',
             'baptis' => 'required',
             'tanggal' => 'required|date',
             'gereja' => 'required'
@@ -42,16 +42,16 @@ class BaptismController extends Controller
     public function edit($id)
     {
         $statuses = ['baptis', 'belum baptis'];
-        $families = Family::all();
+        $family_members = FamilyMember::all();
         $baptism = Baptism::find($id);
         
-        return view('dashboard.baptism.edit', compact('baptism', 'statuses', 'families'));
+        return view('dashboard.baptism.edit', compact('baptism', 'statuses', 'family_members'));
     }
 
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'anggota_keluarga_id' => 'required',
+            'family_member_id' => 'required',
             'baptis' => 'required',
             'tanggal' => 'required|date',
             'gereja' => 'required'

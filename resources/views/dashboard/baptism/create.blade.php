@@ -12,14 +12,14 @@
           <form action="{{ route('baptis.store') }}" method="POST">
             @csrf
             <div class="form-group col-md-6">
-              <label for="anggota_keluarga_id">Keluarga</label>
-              <select name="anggota_keluarga_id" id="anggota_keluarga_id" class="form-control @error('anggota_keluarga_id') is-invalid @enderror" required>
+              <label for="family_member_id">Keluarga</label>
+              <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror" required>
                 <option>--Pilih Keluarga--</option>
                 @foreach ($families as $family)
                   <option value="{{ $family->id }}">{{ $family->keluarga }}</option>
                 @endforeach
               </select>
-              @error('anggota_keluarga_id')
+              @error('family_member_id')
                 <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
               @enderror
             </div>

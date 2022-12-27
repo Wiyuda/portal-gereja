@@ -48,8 +48,6 @@
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $baptism->family_members->nama }}</td>
-                    {{-- <td>{{ $married->families->keluarga }}</td> --}}
-
                     <td>{{ $baptism->baptis }}</td>
                     <td>{{ $baptism->tanggal }}</td>
                     <td>{{ $baptism->gereja }}</td>
