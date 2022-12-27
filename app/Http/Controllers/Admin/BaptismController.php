@@ -38,7 +38,7 @@ class BaptismController extends Controller
             'tanggal' => $request->tanggal,
             'gereja' => $request->gereja
         ]);
-
+        
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Tambahkan');
     }
 
@@ -59,15 +59,13 @@ class BaptismController extends Controller
             'baptis' => 'required',
             'tanggal' => 'date'
         ]);
-
-        $Baptism = [
+      
+        Baptism::find($id)->update([
             'family_member_id' => $request->family_member_id,
             'baptis' => $request->baptis,
             'tanggal' => $request->tanggal,
             'gereja' => $request->gereja
-        ];
-
-        $baptism = Baptism::find($id)->update($Baptism);
+        ]);
 
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Update');
     }

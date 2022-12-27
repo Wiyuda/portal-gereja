@@ -25,7 +25,7 @@
                   @endforeach
                 </select>
                 @error('family_member_id')
-                  <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+                    <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
               <div class="form-row">
@@ -34,11 +34,11 @@
                   <select name="baptis" id="baptis" class="form-control @error('baptis') is-invalid @enderror">
                     <option>--Pilih Status--</option>
                     @foreach ($statuses as $status)
-                    @if ($status == $baptism->baptis)
-                        <option value="{{ $status }}" selected>{{ $status }}</option>
-                    @else
-                        <option value="{{ $status }}">{{ $status }}</option>
-                    @endif
+                      @if ($status == $baptism->baptis)
+                          <option value="{{ $status }}" selected>{{ $status }}</option>
+                      @else
+                          <option value="{{ $status }}">{{ $status }}</option>
+                      @endif
                     @endforeach
                   </select>
                 </div>

@@ -20,7 +20,7 @@
                 @endforeach
               </select>
               @error('family_member_id')
-                  <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+                <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
               @enderror
             </div>
             <div class="form-row">
