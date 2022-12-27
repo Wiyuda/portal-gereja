@@ -62,12 +62,9 @@
         <h6 class="collapse-header">Data Keluarga</h6>
         <a class="collapse-item" href="{{ route('keluarga.index') }}">Keluarga</a>
         <a class="collapse-item" href="{{ route('member.index') }}">Anggota Keluarga</a>
-<<<<<<< HEAD
-        <a class="collapse-item" href="{{ route('sidi.index') }}">Sidi</a>
         <a class="collapse-item" href="{{ route('monding.index') }}">Monding</a>
-=======
         <a class="collapse-item" href="{{ route('kawin.index') }}">Kawin</a>
->>>>>>> 18bb599 (Hasil revisian-1 table baptism dll)
+        <a class="collapse-item" href="{{ route('sidi.index') }}">Sidi</a>
       </div>
     </div>
   </li>
