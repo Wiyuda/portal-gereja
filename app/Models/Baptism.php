@@ -15,5 +15,6 @@ class Baptism extends Model
     public function family_members()
     {
         return $this->belongsTo(FamilyMember::class, 'family_member_id');
+   
     }
 }

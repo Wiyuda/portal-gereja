@@ -20,7 +20,8 @@ class BaptismController extends Controller
     {
         $statuses = ['baptis', 'belum baptis'];
         $family_members = FamilyMember::all(); 
-        return view('dashboard.baptism.create', compact('statuses', 'family_members'));
+        $baptisms = Baptism::all();
+        return view('dashboard.baptism.create', compact('baptisms', 'statuses', 'family_members'));
     }
 
     public function store(Request $request)
@@ -37,7 +38,7 @@ class BaptismController extends Controller
             'tanggal' => $request->tanggal,
             'gereja' => $request->gereja
         ]);
-        
+
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Tambahkan');
     }
 
@@ -47,7 +48,7 @@ class BaptismController extends Controller
         $family_members = FamilyMember::all();
         $baptism = Baptism::find($id);
         
-        return view('dashboard.baptism.edit', compact('baptism', 'statuses', 'family_members'));
+        return view('dashboard.baptism.edit', compact('baptism', 'statuses', 'family_members'));        
     }
 
     public function update(Request $request, $id)
