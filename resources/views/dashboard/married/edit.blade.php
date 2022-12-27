@@ -25,7 +25,7 @@
                     @endif
                   @endforeach
                 </select>
-                @error('sector_id')
+                @error('family_id')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
