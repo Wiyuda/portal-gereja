@@ -32,7 +32,12 @@ class BaptismController extends Controller
             'gereja' => ''
         ]);
 
-        $baptism = Baptism::create($validate);
+            Baptism::create([
+            'family_member_id' => $request->family_member_id,
+            'baptis' => $request->baptis,
+            'tanggal' => $request->tanggal,
+            'gereja' => $request->gereja
+        ]);
         
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Tambahkan');
     }
@@ -48,6 +53,7 @@ class BaptismController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $validate = $request->validate([
             'family_member_id' => 'required',
             'baptis' => 'required',
@@ -55,7 +61,14 @@ class BaptismController extends Controller
             'gereja' => ''
         ]);
 
-        $baptism = Baptism::find($id)->update($validate);
+        $Baptism = [
+            'family_member_id' => $request->family_member_id,
+            'baptis' => $request->baptis,
+            'tanggal' => $request->tanggal,
+            'gereja' => $request->gereja
+        ];
+
+        $baptism = Baptism::find($id)->update($Baptism);
 
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Update');
     }
