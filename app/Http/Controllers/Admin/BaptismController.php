@@ -28,11 +28,10 @@ class BaptismController extends Controller
         $validate = $request->validate([
             'family_member_id' => 'required',
             'baptis' => 'required',
-            'tanggal' => 'date',
-            'gereja' => ''
+            'tanggal' => 'date'
         ]);
 
-            Baptism::create([
+        Baptism::create([
             'family_member_id' => $request->family_member_id,
             'baptis' => $request->baptis,
             'tanggal' => $request->tanggal,
@@ -57,8 +56,7 @@ class BaptismController extends Controller
         $validate = $request->validate([
             'family_member_id' => 'required',
             'baptis' => 'required',
-            'tanggal' => 'date',
-            'gereja' => ''
+            'tanggal' => 'date'
         ]);
 
         $Baptism = [
