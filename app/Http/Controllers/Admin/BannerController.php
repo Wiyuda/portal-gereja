@@ -37,14 +37,14 @@ class BannerController extends Controller
             'status' => 'required'
         ]);
 
-        $filename = $request->image_1->getClientOriginalName();
-        $image_1 = $request->image_1->storeAs('images', date('d-m-Y'). '-' .$filename);
+        $fileExtenstion = $request->image_1->getClientOriginalExtension();
+        $image_1 = $request->image_1->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
 
-        $filename = $request->image_2->getClientOriginalName();
-        $image_2 = $request->image_2->storeAs('images', date('d-m-Y'). '-' .$filename);
+        $fileExtenstion = $request->image_2->getClientOriginalExtension();
+        $image_2 = $request->image_2->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
 
-        $filename = $request->image_3->getClientOriginalName();
-        $image_3 = $request->image_3->storeAs('images', date('d-m-Y'). '-' .$filename);
+        $fileExtenstion = $request->image_3->getClientOriginalExtension();
+        $image_3 = $request->image_3->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
 
         Banner::create([
             'image_1' => $image_1,
@@ -94,14 +94,14 @@ class BannerController extends Controller
             'status' => 'required'
         ]);
 
-        $filename = $request->image_1->getClientOriginalName();
-        $image_1 = $request->image_1->storeAs('images', date('d-m-Y'). '-' .$filename);
+        $fileExtenstion = $request->image_1->getClientOriginalExtension();
+        $image_1 = $request->image_1->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
 
-        $filename = $request->image_2->getClientOriginalName();
-        $image_2 = $request->image_2->storeAs('images', date('d-m-Y'). '-' .$filename);
+        $fileExtenstion = $request->image_2->getClientOriginalExtension();
+        $image_2 = $request->image_2->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
 
-        $filename = $request->image_3->getClientOriginalName();
-        $image_3 = $request->image_3->storeAs('images', date('d-m-Y'). '-' .$filename);
+        $fileExtenstion = $request->image_3->getClientOriginalExtension();
+        $image_3 = $request->image_3->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
 
         Banner::find($id)->update([
             'image_1' => $image_1,
