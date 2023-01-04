@@ -37,14 +37,17 @@ class BannerController extends Controller
             'status' => 'required'
         ]);
 
-        $fileExtenstion = $request->image_1->getClientOriginalExtension();
-        $image_1 = $request->image_1->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
+        $extenstion = $request->file('image_1')->getClientOriginalExtension();
+        $image_1 = 'banner' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('image_1')->storeAs('banner', $image_1, 'public');
 
-        $fileExtenstion = $request->image_2->getClientOriginalExtension();
-        $image_2 = $request->image_2->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
+        $extenstion = $request->file('image_2')->getClientOriginalExtension();
+        $image_2 = 'banner' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('image_2')->storeAs('banner', $image_2, 'public');
 
-        $fileExtenstion = $request->image_3->getClientOriginalExtension();
-        $image_3 = $request->image_3->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
+        $extenstion = $request->file('image_3')->getClientOriginalExtension();
+        $image_3 = 'banner' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('image_3')->storeAs('banner', $image_3, 'public');
 
         Banner::create([
             'image_1' => $image_1,
@@ -94,14 +97,17 @@ class BannerController extends Controller
             'status' => 'required'
         ]);
 
-        $fileExtenstion = $request->image_1->getClientOriginalExtension();
-        $image_1 = $request->image_1->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
+        $extenstion = $request->file('image_1')->getClientOriginalExtension();
+        $image_1 = 'banner' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('image_1')->storeAs('banner', $image_1, 'public');
 
-        $fileExtenstion = $request->image_2->getClientOriginalExtension();
-        $image_2 = $request->image_2->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
+        $extenstion = $request->file('image_2')->getClientOriginalExtension();
+        $image_2 = 'banner' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('image_2')->storeAs('banner', $image_2, 'public');
 
-        $fileExtenstion = $request->image_3->getClientOriginalExtension();
-        $image_3 = $request->image_3->storeAs('banner', 'banner'. '-' .time(). '.' .$fileExtenstion);
+        $extenstion = $request->file('image_3')->getClientOriginalExtension();
+        $image_3 = 'banner' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('image_3')->storeAs('banner', $image_3, 'public');
 
         Banner::find($id)->update([
             'image_1' => $image_1,

@@ -11,18 +11,21 @@
         <div class="card-body">
           <form action="{{ route('baptis.store') }}" method="POST">
             @csrf
-            <div class="form-group col-md-6">
-              <label for="family_member_id">Keluarga</label>
-              <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror" required>
-                <option>--Pilih Keluarga--</option>
-                @foreach ($family_members as $fm)
-                  <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
-                @endforeach
-              </select>
-              @error('family_member_id')
-                <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
-              @enderror
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="family_member_id">Keluarga</label>
+                <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror" required>
+                  <option>--Pilih Keluarga--</option>
+                  @foreach ($family_members as $fm)
+                    <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
+                  @endforeach
+                </select>
+                @error('family_member_id')
+                  <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+                @enderror
+              </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="baptis">Baptis</label>

@@ -11,7 +11,8 @@
         <div class="card-body">
           <form action="{{ route('kawin.store') }}" method="POST">
             @csrf
-            <div class="form-group col-md-6">
+            <div class="form-row">
+              <div class="form-group col-md-6">
                 <label for="family">Keluarga</label>
                 <select name="family_id" id="family" class="form-control @error('family_id') is-invalid @enderror">
                   <option>--Pilih Keluarga--</option>
@@ -23,6 +24,7 @@
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
+            </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="kawin">Kawin</label>

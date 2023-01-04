@@ -13,14 +13,14 @@
             @csrf
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="image_1">Image 1</label>
+                <label for="image_1" class="form-label">Image 1</label>
                 <input type="file" name="image_1" id="image_1" class="form-control @error('image_1') is-invalid @enderror">
                 @error('image_1')
                     <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="title_1">Title 1</label>
+                <label for="title_1" >Title 1</label>
                 <input type="text" name="title_1" id="title_1" class="form-control @error('title_1') is-invalid @enderror">
                 @error('title_1')
                     <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
