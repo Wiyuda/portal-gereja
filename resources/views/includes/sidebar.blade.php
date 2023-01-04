@@ -77,6 +77,7 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Akun</h6>
         <a class="collapse-item" href="{{ route('admin.index') }}">Admin</a>
+        <a class="collapse-item" href="{{ route('banner.index') }}">Banner</a>
       </div>
     </div>
   </li>

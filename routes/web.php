@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\Admin\SidiController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\FamilyController;
 use App\Http\Controllers\Admin\PriestController;
 use App\Http\Controllers\Admin\ProfilController;
@@ -46,5 +47,6 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/sidi', SidiController::class);
     Route::resource('/monding', MondingController::class);
     Route::resource('/baptis', BaptismController::class);
+    Route::resource('/banner', BannerController::class);
   });
 });
