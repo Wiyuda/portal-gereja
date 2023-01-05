@@ -53,6 +53,12 @@
     </a>
   </li>
   <li class="nav-item mb-0">
+    <a class="nav-link mb-0 pb-0" href="{{ route('news.index') }}">
+      <i class="fas fa-male"></i><i class="fas fa-male"></i>
+      <span>Warta</span>
+    </a>
+  </li>
+  <li class="nav-item mb-0">
     <a class="nav-link collapsed mb-0 pb-0" href="#" data-toggle="collapse" data-target="#keluarga" aria-expanded="true" aria-controls="keluarga">
       <i class="fas fa-fw fa-male"></i>
       <span>Master Keluarga</span>
