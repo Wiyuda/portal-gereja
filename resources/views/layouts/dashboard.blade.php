@@ -89,6 +89,9 @@
   <script src="{{ url('./assets/library/template/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ url('./assets/library/template/js/demo/datatables-demo.js') }}"></script>
 
+  {{-- fontawesome --}}
+  <script src="https://kit.fontawesome.com/e7f5845a19.js" crossorigin="anonymous"></script>
+
   @stack('scripts')
 
 </body>
