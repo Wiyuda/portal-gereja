@@ -29,9 +29,6 @@
                       <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                   @enderror
                 </div>
-              </div>
-
-              <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="baptis">Baptis</label>
                   <select name="baptis" id="baptis" class="form-control @error('baptis') is-invalid @enderror">
@@ -47,16 +44,14 @@
                 </div>
               </div>
             <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="tanggal">Tanggal</label>
                 <input type="date" name="tanggal" id="tanggal" class="form-control @error('tanggal') is-invalid @enderror" placeholder="Input tanggal" value="{{ $baptism->tanggal }}">
                 @error('tanggal')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="gereja">Gereja</label>
                 <input type="text" name="gereja"  id="gereja" class="form-control @error('gereja') is-invalid @enderror" placeholder="Input gereja" value="{{ $baptism->gereja }}">
                 @error('gereja')
