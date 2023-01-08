@@ -40,6 +40,10 @@
                   <td>Sintua</td>
                   <td>{{ $profile->sintua }}</td>
                 </tr>
+                <tr>
+                  <td>Image</td>
+                  <td><img src="{{ url('storage/image/', $profile->image) }}" alt="Profile"></td>
+                </tr>
               </tbody>
             </table>
             <div class="d-flex justify-content-end">

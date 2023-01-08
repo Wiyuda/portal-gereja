@@ -40,6 +40,13 @@
                 <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
               @enderror
             </div>
+            <div class="form-group">
+              <label for="image">Profile</label>
+              <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image" value="{{ $profile->image }}">
+              @error('image')
+                <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+              @enderror
+            </div>
             <div class="d-flex justify-content-end">
               <button type="submit" class="btn btn-primary mr-3">Update Profil Gereja</button>
               <a href="{{ route('profil.index') }}" class="btn btn-warning">Kembali</a>

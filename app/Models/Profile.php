@@ -10,5 +10,5 @@ class Profile extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['nama', 'tahun', 'pendiri', 'pendeta_resort', 'pendeta_jemaat', 'guru_huria', 'sintua'];
+    protected $fillable = ['nama', 'tahun', 'pendiri', 'pendeta_resort', 'pendeta_jemaat', 'guru_huria', 'sintua', 'image'];
 }
