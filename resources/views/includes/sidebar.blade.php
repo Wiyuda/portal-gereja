@@ -47,14 +47,8 @@
     </a>
   </li>
   <li class="nav-item mb-0">
-    <a class="nav-link mb-0 pb-0" href="{{ route('baptis.index') }}">
-      <i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i>
-      <span>Baptis</span>
-    </a>
-  </li>
-  <li class="nav-item mb-0">
     <a class="nav-link mb-0 pb-0" href="{{ route('news.index') }}">
-      <i class="fas fa-male"></i><i class="fas fa-male"></i>
+      <i class="fa-solid fa-file"></i>
       <span>Warta</span>
     </a>
   </li>
@@ -71,6 +65,7 @@
         <a class="collapse-item" href="{{ route('kawin.index') }}">Kawin</a>
         <a class="collapse-item" href="{{ route('sidi.index') }}">Sidi</a>
         <a class="collapse-item" href="{{ route('monding.index') }}">Monding</a>
+        <a class="collapse-item" href="{{ route('baptis.index') }}">Baptis</a>
       </div>
     </div>
   </li>
