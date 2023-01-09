@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('pendeta_jemaat', 50)->nullable();
             $table->string('guru_huria', 50)->nullable();
             $table->text('sintua')->nullable();
+            $table->string('image')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
