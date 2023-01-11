@@ -198,7 +198,7 @@
                           <i class="fa-solid fa-users fa-2x"></i>
                         </div>
                         <div class="col-6 text-end align-items-center">
-                          <p class="fw-bold">120</p>
+                          <p class="fw-bold">{{ $family_member->id }}</p>
                         </div>
                       </div>
                     </div>
@@ -213,7 +213,7 @@
                           <i class="fa-solid fa-people-roof fa-2x"></i>
                         </div>
                         <div class="col-6 text-end">
-                          <p class="fw-bold">60</p>
+                          <p class="fw-bold">{{ $family->id }}</p>
                         </div>
                       </div>
                     </div>
@@ -228,7 +228,7 @@
                           <i class="fa-solid fa-church fa-2x"></i>
                         </div>
                         <div class="col-6 text-end">
-                          <p class="fw-bold">10</p>
+                          <p class="fw-bold">{{ $profile->sintua }}</p>
                         </div>
                       </div>
                     </div>

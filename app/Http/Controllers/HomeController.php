@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Family;
+use App\Models\FamilyMember;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +15,11 @@ class HomeController extends Controller
         if(Auth::check()) {
             return redirect()->route('dashboard');
         }
-        return view('home');
+
+        $family_member = FamilyMember::first();
+        $family = Family::first();
+        $profile = Profile::first();
+
+        return view('home', compact('family_member', 'family', 'profile'));
     }
 }
