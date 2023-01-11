@@ -262,34 +262,29 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Minggu</th>
-                      <th>Warta</th>
                       <th>Keterangan</th>
+                      <th>Warta</th>
+                      <th>Minggu</th>
+                      <th>Tanggal</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($news as $warta)
                     <tr>
-                      <th>1</th>
-                      <td>12/10/2022</td>
-                      <td>Minggu</td>
-                      <td>warta-minggu.pdf</td>
-                      <td>Minggu ini</td>
+                      <th>{{ $no++ }}</th>
+                      <td>{{ $warta->keterangan }}</td>
+                      <td>{{ $warta->warta }}</td>
+                      <td>{{ $warta->minggu }}</td>
+                      <td>{{ $warta->tanggal }}</td>
                       <td>
-                        <a href="" target="_blank" rel="noopener noreferrer">Download</a>
+                        <a href="{{ url('storage/warta/' , $warta->warta) }}" target="_blank" rel="noopener noreferrer">Download</a>
                       </td>
                     </tr>
-                    <tr>
-                      <th>2</th>
-                      <td>12/10/2022</td>
-                      <td>Minggu</td>
-                      <td>warta-minggu.pdf</td>
-                      <td>Minggu ini</td>
-                      <td>
-                        <a href="" target="_blank" rel="noopener noreferrer">Download</a>
-                      </td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
