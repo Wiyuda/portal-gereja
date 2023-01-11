@@ -131,16 +131,16 @@
                 </div>
                 <div class="col-md-7 col-sm-12 mt-2">
                   <div class="card-body pt-1">
-                    <h5 class="card-title text-center fw-bold">Gereja Huria Kristen Batak Protestan (HKBP)</h5>
+                    <h5 class="card-title text-center fw-bold">{{ $profile->nama }}</h5>
                     <div class="table-responsive">
                       <table class="table">
                         <tr>
                           <th>Pendiri </th>
-                          <td>Efori Buulolo</td>
+                          <td>{{ $profile->pendiri }}</td>
                         </tr>
                         <tr>
                           <th>Tahun Berdiri </th>
-                          <td>2012</td>
+                          <td>{{ $profile->tahun }}</td>
                         </tr>
                         <tr>
                           <th>Alamat </th>
@@ -148,21 +148,21 @@
                         </tr>
                         <tr>
                           <th>Pendeta Besar </th>
-                          <td>Efori Buulolo</td>
+                          <td>{{ $profile->pendeta_resort }}</td>
                         </tr>
                         <tr>
                           <th>Pendeta Jemaat </th>
-                          <td>Efori Buulolo</td>
+                          <td>{{ $profile->pendeta_jemaat }}</td>
                         </tr>
                         <tr>
                           <th>Guru Huria </th>
-                          <td>Efori Buulolo</td>
+                          <td>{{ $profile->guru_huria }}</td>
                         </tr>
                         <tr>
                           <th>Sintua </th>
                           <td>
                             <ul>
-                              <li>Efori Buelolo</li>
+                              <li>{{ $profile->sintua }}</li>
                             </ul>
                           </td>
                         </tr>
