@@ -26,9 +26,20 @@ class ProfilController extends Controller
             'pendeta_jemaat' => 'required|max:50',
             'guru_huria' => 'required|max:50',
             'sintua' => 'required',
+            'image' => 'image|file|max:2048|mimes:jpg,jpeg,png|required'
         ]);
 
-        Profile::find($id)->update($request->all());
+        $extension = $request->file('image')->getClientOriginalExtension();
+        $image = 'profile' . '-' .rand(). '.'. $extension;
+        $path = $request->file('image')->storeAs('profile', $image, 'public');
+
+        Profile::find($id)->update([
+            'pendeta_resort' => $request->pendeta_resort,
+            'pendeta_jemaat' => $request->pendeta_jemaat,
+            'guru_huria' => $request->guru_huria,
+            'sintua' => $request->sintua,
+            'image' => $image
+        ]);
 
         return redirect()->route('profil.index')->with('status', 'Profile Gereja Berhasil di Update');
     }
