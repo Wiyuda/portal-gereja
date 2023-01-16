@@ -14,9 +14,9 @@ class DashboardController extends Controller
     public function index()
     {
         $family = Family::all()->count();
-        $friest = Priest::first()->count();
-        $news = News::first()->count();
-        $sector = Sector::first()->count();
+        $friest = Priest::all()->count();
+        $news = News::all()->count();
+        $sector = Sector::all()->count();
         return view('dashboard.dashboard', compact('family', 'friest', 'news', 'sector'));
     }
 }

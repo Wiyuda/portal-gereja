@@ -16,7 +16,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Keluarga</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $family }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800 ps-3">{{ $family }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-fw fa-male fa-2x text-gray-300"></i>
@@ -34,7 +34,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Pastur</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $friest }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800 ps-3">{{ $friest }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -52,7 +52,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Warta
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $news }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800 ps-3">{{ $news }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa-solid fa-file fa-2x text-gray-300"></i>
@@ -70,7 +70,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Sector</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sector }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800 ps-3">{{ $sector }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-map-marker fa-2x text-gray-300"></i>

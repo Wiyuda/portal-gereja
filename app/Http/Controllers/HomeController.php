@@ -17,11 +17,12 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         }
 
-        $family_member = FamilyMember::first();
-        $family = Family::first();
+        $family_member = FamilyMember::all()->count();
+        $family = Family::all()->count();
         $profile = Profile::first();
         $news = News::all();
+        $sintua = Profile::all()->count();
 
-        return view('home', compact('family_member', 'family', 'profile', 'news'));
+        return view('home', compact('family_member', 'family', 'profile', 'news', 'sintua'));
     }
 }
