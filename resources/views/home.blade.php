@@ -370,7 +370,7 @@
         ],
         datasets: [{
           label: 'Jumlah Statistik',
-          data: [300, 50, 100],
+          data: [{{ $family_member }}, {{ $family }}, {{ $sintua }}],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
