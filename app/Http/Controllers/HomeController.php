@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\News;
 use App\Models\Family;
 use App\Models\Profile;
@@ -22,7 +23,8 @@ class HomeController extends Controller
         $profile = Profile::first();
         $news = News::all();
         $sintua = Profile::all()->count();
+        $banner = Banner::first();
 
-        return view('home', compact('family_member', 'family', 'profile', 'news', 'sintua'));
+        return view('home', compact('family_member', 'family', 'profile', 'news', 'sintua', 'banner'));
     }
 }
