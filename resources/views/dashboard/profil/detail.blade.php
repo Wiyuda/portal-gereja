@@ -41,8 +41,8 @@
                   <td>{{ $profile->sintua }}</td>
                 </tr>
                 <tr>
-                  <td>Image</td>
-                  <td><img src="{{ url('storage/image/', $profile->image) }}" alt="Profile"></td>
+                  <td>Profile</td>
+                  <td><img src="{{ url('storage/profile/', $profile->image) }}" alt="Profile" class="img img-fluid img-thumbnail"></td>
                 </tr>
               </tbody>
             </table>

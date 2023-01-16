@@ -9,7 +9,7 @@
           <h6 class="fw-bold">Update Profil Gereja</h6>
         </div>
         <div class="card-body">
-          <form action="{{ route('profil.update', $profile->id) }}" method="POST">
+          <form action="{{ route('profil.update', $profile->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="form-group">
