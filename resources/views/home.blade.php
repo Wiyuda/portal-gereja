@@ -80,24 +80,24 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{ url('./assets/images/1.jpg') }}" class="d-block w-100 rounded" alt="">
+                <img src="{{ url('storage/banner/', $banner->image_1) }}" class="d-block w-100 rounded" alt="">
                 <div class="carousel-caption d-none d-md-block fw-bold">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                  <h5>{{ $banner->title_1 }}</h5>
+                  <p>{{ $banner->deskripsi_1 }}</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{{ url('./assets/images/2.jpg') }}" class="d-block w-100 rounded" alt="">
+                <img src="{{ url('storage/banner/', $banner->image_2) }}" class="d-block w-100 rounded" alt="">
                 <div class="carousel-caption d-none d-md-block fw-bold">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
+                  <h5>{{ $banner->title_2 }}</h5>
+                  <p>{{ $banner->deskripsi_2 }}</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{{ url('./assets/images/3.jpg') }}" class="d-block w-100 rounded" alt="">
+                <img src="{{ url('storage/banner/', $banner->image_3) }}" class="d-block w-100 rounded" alt="">
                 <div class="carousel-caption d-none d-md-block fw-bold">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+                  <h5>{{ $banner->title_3 }}</h5>
+                  <p>{{ $banner->deskripsi_3 }}</p>
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@
               <hr>
               <div class="row g-0">
                 <div class="col-md-5 col-sm-12 mt-2">
-                  <img src="{{ url('./assets/images/gereja.jpg') }}" class="img-fluid rounded-start" alt="Gereja">
+                  <img src="{{ url('storage/profile/', $profile->image) }}" class="img-fluid rounded-start" alt="Gereja">
                 </div>
                 <div class="col-md-7 col-sm-12 mt-2">
                   <div class="card-body pt-1">
