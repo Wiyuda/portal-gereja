@@ -55,7 +55,15 @@ Route::prefix('/admin')->group(function () {
     Route::post('/kawin/destroy/{id}', [MarriedController::class, 'destroy'])->name('kawin.destroy');
 
     Route::resource('/sidi', SidiController::class);
-    Route::resource('/monding', MondingController::class);
+
+    Route::get('/monding', [MondingController::class, 'index'])->name('monding.index');
+    Route::get('/monding/create', [MondingController::class, 'create'])->name('monding.create');
+    Route::get('/getFamilyMember/{id}', [MondingController::class, 'getFamilyMember'])->name('getFamilyMember');
+    Route::post('monding/store', [MondingController::class, 'store'])->name('monding.store');
+    Route::get('/monding/edit/{id}', [MondingController::class, 'edit'])->name('monding.edit');
+    Route::post('/monding/update/{id}', [MondingController::class, 'update'])->name('monding.update');
+    Route::post('/monding/destroy/{id}', [MondingController::class, 'destroy'])->name('monding.destroy');
+
     Route::resource('/baptis', BaptismController::class);
     Route::resource('/banner', BannerController::class);
     Route::resource('/news', NewsController::class);

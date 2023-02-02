@@ -10,7 +10,12 @@ class Monding extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_member_id', 'monding', 'tgl'];
+    protected $fillable = ['family_id', 'family_member_id', 'monding', 'tanggal', 'keterangan'];
+
+    public function families()
+    {
+        return $this->belongsTo(Family::class, 'family_id');
+    }
 
     public function family_members()
     {

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\FamilyMember;
+use App\Models\Family;
 use App\Models\Monding;
+use App\Models\FamilyMember;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class MondingController extends Controller
 {
@@ -15,19 +16,27 @@ class MondingController extends Controller
         return view('dashboard.monding.monding', compact('mondings'));
     }
 
+    public function getFamilyMember($id)
+    {
+        $familyMember = FamilyMember::where('family_id', $id)->get();
+        return response()->json($familyMember);
+    }
+
     public function create()
     {
-        $familyMembers = FamilyMember::all();
-        $mondings = ['Monding', 'Belum Monding'];
-        return view('dashboard.monding.create', compact('familyMembers', 'mondings'));
+        $families = Family::all();
+        $monding = 'Monding';
+        return view('dashboard.monding.create', compact('families', 'monding'));
     }
 
     public function store(Request $request)
     {
         $validator = $request->validate([
+            'family_id' => 'required',
             'family_member_id' => 'required|integer',
             'monding' => 'required',
-            'tgl' => 'date'
+            'tanggal' => 'date',
+            'keterangan' => 'required'
         ]);
 
         $monding = Monding::create($validator);
@@ -38,17 +47,20 @@ class MondingController extends Controller
     public function edit($id)
     {
         $monding = Monding::find($id);
-        $familyMembers = FamilyMember::all();
-        $mondings = ['Monding', 'Belum Monding'];
-        return view('dashboard.monding.edit', compact('familyMembers', 'mondings', 'monding'));
+        $mondingStatus = 'Monding';
+        $families = Family::all();
+        $family_members = FamilyMember::where('family_id', $monding->family_id)->get();
+        return view('dashboard.monding.edit', compact('monding', 'mondingStatus', 'families',  'family_members'));
     }
 
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
+            'family_id' => 'required',
             'family_member_id' => 'required|integer',
             'monding' => 'required',
-            'tgl' => 'date'
+            'tanggal' => 'date',
+            'keterangan' => 'required'
         ]);
 
         $monding = Monding::find($id)->update($validator);

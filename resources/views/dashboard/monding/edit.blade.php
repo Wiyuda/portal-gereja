@@ -10,17 +10,32 @@
         <div class="card-body">
           <form action="{{ route('monding.update', $monding->id) }}" method="POST">
             @csrf
-            @method('put')
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="family_member_id">Nama Jemaat</label>
-                <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror">
-                  <option>--Pilih Nama Jemaat--</option>
-                  @foreach ($familyMembers as $family)
-                    @if ($family->id == $monding->family_member_id)
-                      <option value="{{ $family->id }}" selected>{{ $family->nama }}</option>  
+                <label for="family_id">Keluarga</label>
+                <select name="family_id" id="family_id" class="form-control @error('family_id') is-invalid @enderror">
+                  <option>--Pilih Keluarga--</option>
+                  @foreach ($families as $family)
+                    @if ($monding->family_id == $family->id)
+                      <option value="{{ $family->id }}" selected>{{ $family->keluarga }}</option>
                     @else
-                      <option value="{{ $family->id }}">{{ $family->nama }}</option>
+                      <option value="{{ $family->id }}">{{ $family->keluarga }}</option>
+                    @endif
+                  @endforeach
+                </select>
+                @error('family_id')
+                  <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
+                <label for="family_member_id">Anggota Jemaat</label>
+                <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror">
+                  <option>--Pilih Anggota Jemaat--</option>
+                  @foreach ($family_members as $fm)
+                    @if ($monding->family_member_id == $fm->id)
+                      <option value="{{ $fm->id }}" selected>{{ $fm->nama }}</option>
+                    @else
+                      <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
                     @endif
                   @endforeach
                 </select>
@@ -28,29 +43,30 @@
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
+              
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="monding">Monding</label>
-                <select name="monding" id="monding" class="form-control @error('monding') is-invalid @enderror" onchange="handleStatus()">
-                  <option>--Pilih Status Monding--</option>
-                  @foreach ($mondings as $m)
-                    @if ($m == $monding->monding)
-                      <option value="{{ $m }}" selected>{{ $m }}</option>  
-                    @else
-                      <option value="{{ $m }}">{{ $m }}</option>
-                    @endif
-                  @endforeach
-                </select>
+                <input type="text" name="monding" value="{{ $mondingStatus }}" id="monding" class="form-control @error('monding') is-invalid @enderror" readonly>
                 @error('monding')
+                    <div class="alert alert-danger mt-2 mb-2 p-2">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
+                <label for="tanggal">Tanggal</label>
+                <input type="date" name="tanggal" value="{{ $monding->tanggal }}" id="tanggal" class="form-control @error('tanggal') is-invalid @enderror">
+                @error('tanggal')
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-12">
-                <label for="tgl">Tanggal</label>
-                <input type="date" name="tgl" id="tgl" class="form-control @error('tgl') is-invalid @enderror" value="{{ $monding->tgl }}" disabled>
-                @error('tgl')
-                  <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
+            <div class="form-row mb-3">
+              <div class="col-md-12">
+                <label for="keterangan" class="form-label">Keterangan</label>
+                <textarea name="keterangan" id="keterangan" cols="30" rows="5" class="form-control @error('keterangan') is-invalid @enderror">{{ $monding->keterangan }}</textarea>
+                @error('keterangan')
+                    <div class="alert alert-danger mt-2 mb-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
             </div>
@@ -64,6 +80,35 @@
     </div>
   </div>
   @push('scripts')
+  <script>
+    $(document).ready(function() {
+    $('#family_id').on('change', function() {
+       var categoryID = $(this).val();
+       if(categoryID) {
+           $.ajax({
+               url: '/admin/getFamilyMember/'+categoryID,
+               type: "GET",
+               data : {"_token":"{{ csrf_token() }}"},
+               dataType: "json",
+               success:function(data)
+               {
+                 if(data){
+                    $('#family_member_id').empty();
+                    $('#family_member_id').append('<option hidden>--Pilih Anggota Jemaat--</option>'); 
+                    $.each(data, function(key, family_member_id){
+                        $('select[name="family_member_id"]').append('<option value="'+ family_member_id.id +'">' + family_member_id.nama+ '</option>');
+                    });
+                }else{
+                    $('#family_member_id').empty();
+                }
+             }
+           });
+       }else{
+         $('#family_member_id').empty();
+       }
+    });
+    });
+  </script>
     <script>
       function handleStatus() {
         let statusMonding = document.getElementById('monding').value
