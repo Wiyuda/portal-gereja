@@ -21,7 +21,7 @@
   <link href="{{ url('./assets/library/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
   {{-- Datatable --}}
-  <link href="{{ url('./assets/library/template/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+  {{-- <link href="{{ url('./assets/library/template/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 </head>
@@ -85,12 +85,15 @@
   <script src="{{ url('./assets/library/template/js/sb-admin-2.min.js') }}"></script>
 
   {{-- Datatables --}}
-  <script src="{{ url('./assets/library/template/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  {{-- <script src="{{ url('./assets/library/template/vendor/datatables/jquery.dataTables.min.js') }}"></script>
   <script src="{{ url('./assets/library/template/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-  <script src="{{ url('./assets/library/template/js/demo/datatables-demo.js') }}"></script>
+  <script src="{{ url('./assets/library/template/js/demo/datatables-demo.js') }}"></script> --}}
 
   {{-- fontawesome --}}
   <script src="https://kit.fontawesome.com/e7f5845a19.js" crossorigin="anonymous"></script>
+
+  {{-- Jquery / Ajax --}}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   @stack('scripts')
 

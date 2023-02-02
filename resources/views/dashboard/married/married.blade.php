@@ -23,21 +23,21 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Kawin</th>
                   <th>Keluarga</th>
-                  <th>Tanggal</th>
-                  <th>Gereja</th>
-                  <th width="11%">Aksi</th>
+                  <th>Anggota Keluarga</th>
+                  <th>Kawin</th>
+                  <th>Nama Calon</th>
+                  <th width="15%">Aksi</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>No</th>
-                  <th>Kawin</th>
                   <th>Keluarga</th>
-                  <th>Tanggal</th>
-                  <th>Gereja</th>
-                  <th width="11%">Aksi</th>
+                  <th>Anggota Keluarga</th>
+                  <th>Kawin</th>
+                  <th>Nama Calon</th>
+                  <th width="15%">Aksi</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -47,17 +47,19 @@
                 @foreach ($marrieds as $married)
                   <tr>
                     <td>{{ $i++ }}</td>
-                    <td>{{ $married->kawin }}</td>
                     <td>{{ $married->families->keluarga }}</td>
-                    <td>{{ $married->tanggal }}</td>
-                    <td>{{ $married->gereja }}</td>
-                    <td width="11%">
+                    <td>{{ $married->family_members->nama }}</td>
+                    <td>{{ $married->kawin }}</td>
+                    <td>{{ $married->nama_calon }}</td>
+                    <td width="15%">
+                      <a href="{{ route('kawin.show', $married->id) }}" class="btn btn-info">
+                        <i class="fas fa-eye"></i>
+                      </a>
                       <a href="{{ route('kawin.edit', $married->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>
                       </a>
                       <form action="{{ route('kawin.destroy', $married->id) }}" method="POST" class="d-inline">
                         @csrf
-                        @method('delete')
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
                         </button>
