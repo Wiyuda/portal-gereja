@@ -47,12 +47,6 @@ class MarriedController extends Controller
         return redirect()->route('kawin')->with('status', 'Data Kawin Berhasil di Tambahkan');
     }
 
-    public function getFamilyMemberEdit($id)
-    {
-        $familyMemberEdit = FamilyMember::where('family_id', $id)->get();
-        return response()->json($familyMemberEdit);
-    }
-
     public function show($id)
     {
         $married = Married::find($id);
@@ -61,11 +55,11 @@ class MarriedController extends Controller
 
     public function edit($id)
     {
+        $married = Married::find($id);
         $status = 'Kawin';
         $families = Family::all();
-        $family_members = FamilyMember::all();
-        $married = Married::find($id);
-        
+        $family_members = FamilyMember::where('family_id', $married->family_id)->get();
+        // dd($family_members);
         return view('dashboard.married.edit', compact('married', 'families', 'status', 'family_members'));
     }
 
