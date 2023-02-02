@@ -18,9 +18,15 @@ return new class extends Migration
             $table->foreignId('family_id')->constrained('families')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->enum('kawin', ['kawin', 'single']);
+            $table->foreignId('family_member_id')->constrained('family_members')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('kawin', 10);
+            $table->string('nama_calon', 100);
+            $table->string('asal_gereja_calon', 100);
             $table->date('tanggal')->nullable();
             $table->string('gereja', 50)->nullable();
+            $table->text('keterangan');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -44,7 +44,16 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/sektor', SectorController::class);
     Route::resource('/keluarga', FamilyController::class);
     Route::resource('/member', FamilyMemberController::class);
-    Route::resource('/kawin', MarriedController::class);
+
+    Route::get('/kawin', [MarriedController::class, 'index'])->name('kawin');
+    Route::get('/kawin/create', [MarriedController::class, 'create'])->name('kawin.create');
+    Route::get('getFamilyMember/{id}', [MarriedController::class, 'getFamilyMember'])->name('getFamilyMember');
+    Route::post('/kawin/store', [MarriedController::class, 'store'])->name('kawin.store');
+    Route::get('/kawin/show/{id}', [MarriedController::class, 'show'])->name('kawin.show');
+    Route::get('/kawin/edit/{id}', [MarriedController::class, 'edit'])->name('kawin.edit');
+    Route::post('/kawin/update/{id}', [MarriedController::class, 'update'])->name('kawin.update');
+    Route::post('/kawin/destroy/{id}', [MarriedController::class, 'destroy'])->name('kawin.destroy');
+
     Route::resource('/sidi', SidiController::class);
     Route::resource('/monding', MondingController::class);
     Route::resource('/baptis', BaptismController::class);
