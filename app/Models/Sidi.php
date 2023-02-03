@@ -10,7 +10,12 @@ class Sidi extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_member_id', 'sidi', 'tgl', 'gereja'];
+    protected $fillable = ['family_id', 'family_member_id', 'sidi', 'tanggal', 'gereja', 'keterangan'];
+
+    public function families()
+    {
+        return $this->belongsTo(Family::class, 'family_id');
+    }
 
     public function family_members()
     {

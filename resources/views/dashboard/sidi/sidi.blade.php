@@ -23,21 +23,21 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama</th>
+                  <th>Keluarga</th>
+                  <th>Anggota Keluarga</th>
                   <th>Status Sidi</th>
                   <th>Tanggal</th>
-                  <th>Gereja</th>
-                  <th width="11%">Aksi</th>
+                  <th width="15%">Aksi</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>No</th>
-                  <th>Nama</th>
+                  <th>Keluarga</th>
+                  <th>Anggota Keluarga</th>
                   <th>Status Sidi</th>
                   <th>Tanggal</th>
-                  <th>Gereja</th>
-                  <th width="11%">Aksi</th>
+                  <th width="15%">Aksi</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -47,17 +47,19 @@
                 @foreach ($sidis as $sidi)
                   <tr>
                     <td>{{ $i++ }}</td>
+                    <td>{{ $sidi->families->keluarga }}</td>
                     <td>{{ $sidi->family_members->nama }}</td>
                     <td>{{ $sidi->sidi }}</td>
-                    <td>{{ $sidi->tgl }}</td>
-                    <td>{{ $sidi->gereja }}</td>
-                    <td width="11%">
+                    <td>{{ $sidi->tanggal }}</td>
+                    <td width="15%">
+                      <a href="{{ route('sidi.show', $sidi->id) }}" class="btn btn-info">
+                        <i class="fas fa-eye"></i>
+                      </a>
                       <a href="{{ route('sidi.edit', $sidi->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>
                       </a>
                       <form action="{{ route('sidi.destroy', $sidi->id) }}" method="POST" class="d-inline">
                         @csrf
-                        @method('delete')
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
                         </button>

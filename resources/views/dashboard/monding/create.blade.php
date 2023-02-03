@@ -98,15 +98,5 @@
     });
     });
   </script>
-    <script>
-      function handleStatus() {
-        let statusMonding = document.getElementById('monding').value
-        if(statusMonding == '--Pilih Status Monding--' || statusMonding == 'Belum Monding') {
-          document.getElementById('tgl').setAttribute('disabled', 'true');
-        } else {
-          document.getElementById('tgl').removeAttribute('disabled');
-        }
-      }
-    </script>
   @endpush
 @endsection
