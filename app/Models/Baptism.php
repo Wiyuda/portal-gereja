@@ -10,7 +10,12 @@ class Baptism extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_member_id', 'baptis', 'tanggal', 'gereja'];
+    protected $fillable = ['family_id', 'family_member_id', 'baptis', 'tanggal', 'gereja', 'keterangan'];
+
+    public function families()
+    {
+        return $this->belongsTo(Family::class, 'family_id');
+    }
 
     public function family_members()
     {

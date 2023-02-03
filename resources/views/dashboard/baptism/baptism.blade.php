@@ -23,20 +23,20 @@
               <thead>
                 <tr>
                   <th>No</th>
+                  <th>Anggota</th>
                   <th>Anggota Keluarga</th>
                   <th>Baptis</th>
                   <th>Tangggal</th>
-                  <th>Gereja</th>
                   <th width="11%">Aksi</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                     <th>No</th>
+                    <th>Anggota</th>
                     <th>Anggota Keluarga</th>
                     <th>Baptis</th>
                     <th>Tangggal</th>
-                    <th>Gereja</th>
                     <th width="11%">Aksi</th>
                 </tr>
               </tfoot>
