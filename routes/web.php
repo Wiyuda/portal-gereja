@@ -54,7 +54,14 @@ Route::prefix('/admin')->group(function () {
     Route::post('/kawin/update/{id}', [MarriedController::class, 'update'])->name('kawin.update');
     Route::post('/kawin/destroy/{id}', [MarriedController::class, 'destroy'])->name('kawin.destroy');
 
-    Route::resource('/sidi', SidiController::class);
+    Route::get('/sidi', [SidiController::class, 'index'])->name('sidi.index');
+    Route::get('/sidi/create', [SidiController::class, 'create'])->name('sidi.create');
+    Route::get('/getFamilyMember/{id}', [SidiController::class, 'getFamilyMember'])->name('getFamilyMember');
+    Route::post('/sidi/store', [SidiController::class, 'store'])->name('sidi.store');
+    Route::get('/sidi/show/{id}', [SidiController::class, 'show'])->name('sidi.show');
+    Route::get('/sidi/edit/{id}', [SidiController::class, 'edit'])->name('sidi.edit');
+    Route::post('/sidi/update/{id}', [SidiController::class, 'update'])->name('sidi.update');
+    Route::post('/sidi/destroy/{id}', [SidiController::class, 'destroy'])->name('sidi.destroy');
 
     Route::get('/monding', [MondingController::class, 'index'])->name('monding.index');
     Route::get('/monding/create', [MondingController::class, 'create'])->name('monding.create');
