@@ -59,7 +59,6 @@ class MarriedController extends Controller
         $status = 'Kawin';
         $families = Family::all();
         $family_members = FamilyMember::where('family_id', $married->family_id)->get();
-        // dd($family_members);
         return view('dashboard.married.edit', compact('married', 'families', 'status', 'family_members'));
     }
 

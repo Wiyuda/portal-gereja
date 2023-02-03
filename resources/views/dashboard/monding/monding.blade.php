@@ -23,19 +23,23 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama</th>
+                  <th>Keluarga</th>
+                  <th>Anggota Jemaat</th>
                   <th>Status Monding</th>
                   <th>Tanggal</th>
+                  <th>Keterangan</th>
                   <th width="11%">Aksi</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>No</th>
-                  <th>Nama</th>
+                  <th>Keluarga</th>
+                  <th>Anggota Jemaat</th>
                   <th>Status Monding</th>
                   <th>Tanggal</th>
-                  <th width="16%">Aksi</th>
+                  <th>Keterangan</th>
+                  <th width="11%">Aksi</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -45,16 +49,17 @@
                 @foreach ($mondings as $monding)
                   <tr>
                     <td>{{ $i++ }}</td>
+                    <td>{{ $monding->families->keluarga }}</td>
                     <td>{{ $monding->family_members->nama }}</td>
-                    <td>{{$monding->monding }}</td>
-                    <td>{{ $monding->tgl }}</td>
+                    <td>{{ $monding->monding }}</td>
+                    <td>{{ $monding->tanggal }}</td>
+                    <td>{{ $monding->keterangan }}</td>
                     <td width="11%">
                       <a href="{{ route('monding.edit', $monding->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>
                       </a>
                       <form action="{{ route('monding.destroy', $monding->id) }}" method="POST" class="d-inline">
                         @csrf
-                        @method('delete')
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
                         </button>

@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('mondings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('family_id')->constrained('families')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->foreignId('family_member_id')->constrained('family_members')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->enum('monding', ['Monding', 'Belum Monding']);
-            $table->date('tgl')->nullable();
+            $table->string('monding');
+            $table->date('tanggal');
+            $table->text('keterangan');
             $table->softDeletes();
             $table->timestamps();
         });

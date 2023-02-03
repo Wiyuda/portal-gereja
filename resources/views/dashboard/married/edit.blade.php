@@ -33,7 +33,11 @@
                 <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror">
                   <option value="0">--Pilih Anggota Keluarga--</option>
                   @foreach ($family_members as $fm)
+                    @if ($married->family_member_id == $fm->id)
                       <option value="{{ $fm->id }}" selected>{{ $fm->nama }}</option>
+                    @else
+                      <option value="{{ $fm->id }}">{{ $fm->nama }}</option>
+                    @endif
                   @endforeach
                 </select>
               </div>
