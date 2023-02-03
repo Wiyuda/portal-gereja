@@ -32,7 +32,6 @@
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
-              
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">

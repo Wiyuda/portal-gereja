@@ -35,7 +35,7 @@ class MondingController extends Controller
             'family_id' => 'required',
             'family_member_id' => 'required|integer',
             'monding' => 'required',
-            'tanggal' => 'date',
+            'tanggal' => 'required|date',
             'keterangan' => 'required'
         ]);
 
@@ -59,7 +59,7 @@ class MondingController extends Controller
             'family_id' => 'required',
             'family_member_id' => 'required|integer',
             'monding' => 'required',
-            'tanggal' => 'date',
+            'tanggal' => 'required|date',
             'keterangan' => 'required'
         ]);
 

@@ -71,7 +71,15 @@ Route::prefix('/admin')->group(function () {
     Route::post('/monding/update/{id}', [MondingController::class, 'update'])->name('monding.update');
     Route::post('/monding/destroy/{id}', [MondingController::class, 'destroy'])->name('monding.destroy');
 
-    Route::resource('/baptis', BaptismController::class);
+    Route::get('/baptis', [BaptismController::class, 'index'])->name('baptis.index');
+    Route::get('/baptis/create', [BaptismController::class, 'create'])->name('baptis.create');
+    Route::get('/getFamilyMember/{id}', [BaptismController::class, 'getFamilyMember'])->name('getFamilyMember');
+    Route::post('baptis/store', [BaptismController::class, 'store'])->name('baptis.store');
+    Route::get('/baptis/show/{id}', [BaptismController::class, 'show'])->name('baptis.show');
+    Route::get('/baptis/edit/{id}', [BaptismController::class, 'edit'])->name('baptis.edit');
+    Route::post('/baptis/update/{id}', [BaptismController::class, 'update'])->name('baptis.update');
+    Route::post('/baptis/destroy/{id}', [BaptismController::class, 'destroy'])->name('baptis.destroy');
+
     Route::resource('/banner', BannerController::class);
     Route::resource('/news', NewsController::class);
   });
