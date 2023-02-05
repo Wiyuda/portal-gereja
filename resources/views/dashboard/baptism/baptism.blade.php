@@ -23,21 +23,21 @@
               <thead>
                 <tr>
                   <th>No</th>
+                  <th>Keluarga</th>
                   <th>Anggota Keluarga</th>
                   <th>Baptis</th>
                   <th>Tangggal</th>
-                  <th>Gereja</th>
-                  <th width="11%">Aksi</th>
+                  <th width="15%">Aksi</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                     <th>No</th>
+                    <th>Keluarga</th>
                     <th>Anggota Keluarga</th>
                     <th>Baptis</th>
                     <th>Tangggal</th>
-                    <th>Gereja</th>
-                    <th width="11%">Aksi</th>
+                    <th width="15%">Aksi</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -47,17 +47,19 @@
                 @foreach ($baptisms as $baptism)
                   <tr>
                     <td>{{ $i++ }}</td>
+                    <td>{{ $baptism->families->keluarga }}</td>
                     <td>{{ $baptism->family_members->nama }}</td>
                     <td>{{ $baptism->baptis }}</td>
                     <td>{{ $baptism->tanggal }}</td>
-                    <td>{{ $baptism->gereja }}</td>
-                    <td width="11%">
+                    <td width="15%">
+                      <a href="{{ route('baptis.show', $baptism->id) }}" class="btn btn-info">
+                        <i class="fas fa-eye"></i>
+                      </a>
                       <a href="{{ route('baptis.edit', $baptism->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>
                       </a>
                       <form action="{{ route('baptis.destroy', $baptism->id) }}" method="POST" class="d-inline">
                         @csrf
-                        @method('delete')
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
                         </button>

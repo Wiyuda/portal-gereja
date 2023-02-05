@@ -16,57 +16,63 @@ class BaptismController extends Controller
         return view('dashboard.baptism.baptism', compact('baptisms'));
     }
 
+    public function getFamilyMember($id)
+    {
+        $familyMember = FamilyMember::where('family_id', $id)->get();
+        return response()->json($familyMember);
+    }
+
     public function create()
     {
-        $statuses = ['baptis', 'belum baptis'];
-        $family_members = FamilyMember::all(); 
-        $baptisms = Baptism::all();
-        return view('dashboard.baptism.create', compact('baptisms', 'statuses', 'family_members'));
+        $status = 'Baptis';
+        $families = Family::all();
+        return view('dashboard.baptism.create', compact('status', 'families'));
     }
 
     public function store(Request $request)
     {
         $validate = $request->validate([
+            'family_id' => 'required',
             'family_member_id' => 'required',
             'baptis' => 'required',
-            'tanggal' => 'date'
+            'tanggal' => 'date|required',
+            'gereja' => 'required',
+            'keterangan' => 'required'
         ]);
 
-        Baptism::create([
-            'family_member_id' => $request->family_member_id,
-            'baptis' => $request->baptis,
-            'tanggal' => $request->tanggal,
-            'gereja' => $request->gereja
-        ]);
+        Baptism::create($validate);
         
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Tambahkan');
     }
 
+    public function show($id)
+    {
+        $baptism = Baptism::find($id);
+        return view('dashboard.baptism.detail', compact('baptism'));
+    }
+
     public function edit($id)
     {
-        $statuses = ['baptis', 'belum baptis'];
-        $family_members = FamilyMember::all();
         $baptism = Baptism::find($id);
-        
-        return view('dashboard.baptism.edit', compact('baptism', 'statuses', 'family_members'));        
+        $status = 'Baptis';
+        $families = Family::all();
+        $family_members = FamilyMember::where('family_id', $baptism->family_id)->get();
+        return view('dashboard.baptism.edit', compact('baptism', 'status', 'families', 'family_members'));        
     }
 
     public function update(Request $request, $id)
     {
 
         $validate = $request->validate([
+            'family_id' => 'required',
             'family_member_id' => 'required',
             'baptis' => 'required',
-            'tanggal' => 'date'
-        ]);
-      
-        Baptism::find($id)->update([
-            'family_member_id' => $request->family_member_id,
-            'baptis' => $request->baptis,
-            'tanggal' => $request->tanggal,
-            'gereja' => $request->gereja
+            'tanggal' => 'date|required',
+            'gereja' => 'required',
+            'keterangan' => 'required'
         ]);
 
+        Baptism::find($id)->update($validate);
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Update');
     }
 
