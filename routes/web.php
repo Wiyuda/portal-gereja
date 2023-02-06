@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\MarriedController;
 use App\Http\Controllers\Admin\MondingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FamilyMemberController;
+use App\Http\Controllers\Admin\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/baptis/edit/{id}', [BaptismController::class, 'edit'])->name('baptis.edit');
     Route::post('/baptis/update/{id}', [BaptismController::class, 'update'])->name('baptis.update');
     Route::post('/baptis/destroy/{id}', [BaptismController::class, 'destroy'])->name('baptis.destroy');
+
+    Route::resource('/berita', ReportController::class);
 
     Route::resource('/banner', BannerController::class);
     Route::resource('/news', NewsController::class);
