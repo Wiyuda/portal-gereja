@@ -41,4 +41,38 @@ class ReportController extends Controller
 
         return redirect()->route('berita.index')->with('status', 'Berita Baru Gereja Berhasil di Tambahkan');
     }
+
+    public function edit($id)
+    {
+        $report = Report::find($id);
+        return view('dashboard.report.edit', compact('report'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validate = $request->validate([
+            'title' => 'required',
+            'thumbnail' => 'required|image|max:1024|mimes:jpeg,jpg,png',
+            'news' => 'required'
+        ]);
+
+        $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
+        $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
+        $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public');
+
+        $report = Report::find($id)->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'thumbnail' => $imageName,
+            'news' => $request->news
+        ]);
+
+        return redirect()->route('berita.index')->with('status', 'Berita Baru Gereja Berhasil di Update');
+    }
+
+    public function destroy($id)
+    {
+        $report = Report::find($id)->delete();
+        return redirect()->route('berita.index')->with('status', 'Berita Baru Gereja Berhasil di Hapus');
+    }
 }
