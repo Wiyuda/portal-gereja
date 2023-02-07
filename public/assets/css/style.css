@@ -198,6 +198,20 @@ i.fa-arrow-up {
     font-size: 14px;
   }
 
+  .news h3 {
+    font-size: 18px;
+    line-height: 10px;
+  }
+
+  .news a .news-title h5 {
+    font-size: 14px;
+  }
+  
+  
+  .news .news-time p {
+    font-size: 14;
+  }
+
   .statistik h3 {
     font-size: 18px;
     line-height: 10px;
@@ -288,6 +302,11 @@ i.fa-arrow-up {
 
   .profil table tr th,td {
     font-size: 16px;
+  }
+
+  .news h3 {
+    font-size: 20px;
+    line-height: 10px;
   }
 
   .statistik h3 {

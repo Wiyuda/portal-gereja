@@ -191,7 +191,7 @@
               <h3 class="fw-bold">BERITA HARIAN</h3>
               <hr>
               <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                   <div class="card shadow">
                     <div class="card-body p-0">
                       <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
@@ -206,7 +206,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                   <div class="card shadow">
                     <div class="card-body p-0">
                       <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
@@ -221,7 +221,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                   <div class="card shadow">
                     <div class="card-body p-0">
                       <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
@@ -230,9 +230,9 @@
                           <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
                         </div>
                       </a>
-                        <div class="news-time">
-                          <p>By <span>Admin</span> 07-02-2023, 18.00</p>
-                        </div>
+                      <div class="news-time">
+                        <p>By <span>Admin</span> 07-02-2023, 18.00</p>
+                      </div>
                     </div>
                   </div>
                 </div>
