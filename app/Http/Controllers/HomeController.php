@@ -21,10 +21,11 @@ class HomeController extends Controller
         $family_member = FamilyMember::all()->count();
         $family = Family::all()->count();
         $profile = Profile::first();
+        $sintuas = explode(',',$profile->sintua);
         $news = News::all();
         $sintua = Profile::all()->count();
         $banner = Banner::first();
 
-        return view('home', compact('family_member', 'family', 'profile', 'news', 'sintua', 'banner'));
+        return view('home', compact('family_member', 'family', 'profile', 'news', 'sintua', 'banner', 'sintuas'));
     }
 }
