@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Report;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\Exists;
 
 class ReportController extends Controller
 {
@@ -56,9 +59,16 @@ class ReportController extends Controller
             'news' => 'required'
         ]);
 
+        $thumbnailOld = Report::find($id);
+        $pathOld = public_path('storage/thumbnail/'. $thumbnailOld->thumbnail);
+
         $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
         $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
         $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public');
+
+        if(File::exists($pathOld)) {
+            File::delete($pathOld);
+        };
 
         $report = Report::find($id)->update([
             'title' => $request->title,
