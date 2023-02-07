@@ -181,6 +181,70 @@
   </div>
   {{-- End Profil --}}
 
+  {{-- News --}}
+  <div class="news mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="fw-bold">BERITA HARIAN</h3>
+              <hr>
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow">
+                    <div class="card-body p-0">
+                      <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
+                      <a href="#">
+                        <div class="news-title text-center">
+                          <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
+                        </div>
+                      </a>
+                        <div class="news-time">
+                          <p>By <span>Admin</span> 07-02-2023, 18.00</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow">
+                    <div class="card-body p-0">
+                      <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
+                      <a href="#">
+                        <div class="news-title text-center">
+                          <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
+                        </div>
+                      </a>
+                        <div class="news-time">
+                          <p>By <span>Admin</span> 07-02-2023, 18.00</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow">
+                    <div class="card-body p-0">
+                      <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
+                      <a href="#">
+                        <div class="news-title text-center">
+                          <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
+                        </div>
+                      </a>
+                        <div class="news-time">
+                          <p>By <span>Admin</span> 07-02-2023, 18.00</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- End News --}}
+
   {{-- Statistik --}}
   <div class="statistik mt-5 mb-5" id="statistik">
     <div class="container">
