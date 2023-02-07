@@ -40,6 +40,11 @@ body {
   line-height: 13px;
 }
 
+.profil .sintua ul{
+  height: 100px;
+  overflow: scroll;
+}
+
 .statistik h3 {
   font-size: 24px;
   line-height: 13px;

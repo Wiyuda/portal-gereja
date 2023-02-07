@@ -160,9 +160,11 @@
                         </tr>
                         <tr>
                           <th>Sintua </th>
-                          <td>
+                          <td class="sintua">
                             <ul>
-                              <li>{{ $profile->sintua }}</li>
+                              @foreach ($sintuas as $s)
+                                <li>{{ $s }}</li>
+                              @endforeach
                             </ul>
                           </td>
                         </tr>
