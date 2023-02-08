@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\MondingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FamilyMemberController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\ReadNewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,9 @@ use App\Http\Controllers\Admin\ReportController;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/post',[LoginController::class,'loginPost'])->name('loginPost');
+
+Route::get('/berita', [ReadNewsController::class, 'index'])->name('news');
+Route::get('/baca', [ReadNewsController::class, 'show'])->name('read');
 
 Route::prefix('/admin')->group(function () {
   Route::middleware('auth')->group(function () {
