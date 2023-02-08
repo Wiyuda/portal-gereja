@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
-@section('title', 'Admin | Edit Data Pastur')
+@section('title', 'Admin | Edit Data Pendeta Resort')
 
 @section('content')
   <div class="row">
     <div class="col-12">
       <div class="card shadow">
         <div class="card-header">
-          <h6 class="fw-bold">Edit Data Pastur</h6>
+          <h6 class="fw-bold">Edit Data Pendeta Resort</h6>
         </div>
         <div class="card-body">
           <form action="{{ route('pastur.update', $priest->id) }}" method="POST">
@@ -54,7 +54,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary mr-3">Edit Data Pastur</button>
+              <button type="submit" class="btn btn-primary mr-3">Edit Data Pendeta Resort</button>
               <a href="{{ route('pastur.index') }}" class="btn btn-warning">Kembali</a>
             </div>
           </form>
