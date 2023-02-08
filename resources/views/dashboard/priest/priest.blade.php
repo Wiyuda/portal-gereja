@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
-@section('title', 'Admin | Daftar Data Pastur')
+@section('title', 'Admin | Daftar Data Pendeta Resort')
 
 @section('content')
   <div class="row">
     <div class="col-12">
       <div class="card shadow">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <h6 class="fw-bold">Daftar Data Pastur</h6>
-          <a href="{{ route('pastur.create') }}" class="btn btn-primary">Tambah Pastur</a>
+          <h6 class="fw-bold">Daftar Data Pendeta Resort</h6>
+          <a href="{{ route('pastur.create') }}" class="btn btn-primary">Tambah Pendeta Resort</a>
         </div>
         <div class="card-body">
           @if (session('status'))

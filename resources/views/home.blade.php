@@ -116,7 +116,7 @@
                           <td>Jl. Besar Tj, Selamat No. 168, Deli Serdang</td>
                         </tr>
                         <tr>
-                          <th>Pendeta Besar </th>
+                          <th>Pendeta Resort </th>
                           <td>{{ $profile->pendeta_resort }}</td>
                         </tr>
                         <tr>
