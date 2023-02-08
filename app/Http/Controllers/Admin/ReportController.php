@@ -56,26 +56,22 @@ class ReportController extends Controller
     {
         $validate = $request->validate([
             'title' => 'required',
-            'thumbnail' => 'required|image|max:1024|mimes:jpeg,jpg,png',
+            'thumbnail' => 'nullable|image|max:1024|mimes:jpeg,jpg,png',
             'news' => 'required'
         ]);
 
         $thumbnailOld = Report::find($id);
-        $pathOld =  $thumbnailOld->thumbnail;
-        // dd($pathOld);
-
-        $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
-        $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
-        // $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
-
+        
         if($request->hasFile('thumbnail')) {
             $destination = 'storage/thumbnail/'. $thumbnailOld->thumbnail;
             if(File::exists($destination)) {
                 File::delete($destination);
+                $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
+                $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
                 $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
-            } else {
-                $imageName = $pathOld;
             }
+        } else {
+            $imageName = $thumbnailOld->thumbnail;
         }
 
         $report = Report::find($id)->update([
