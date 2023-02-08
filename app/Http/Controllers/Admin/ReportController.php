@@ -61,50 +61,29 @@ class ReportController extends Controller
         ]);
 
         $thumbnailOld = Report::find($id);
-        $pathOld = public_path('storage/thumbnail/'. $thumbnailOld->thumbnail);
+        $pathOld =  $thumbnailOld->thumbnail;
+        // dd($pathOld);
 
-        // $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
-        // $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
+        $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
+        $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
         // $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
 
         if($request->hasFile('thumbnail')) {
             $destination = 'storage/thumbnail/'. $thumbnailOld->thumbnail;
             if(File::exists($destination)) {
                 File::delete($destination);
-                $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
-                $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
                 $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
-                $report = Report::find($id)->update([
-                    'title' => $request->title,
-                    'slug' => Str::slug($request->title),
-                    'thumbnail' => $imageName,
-                    'news' => $request->news
-                ]);
             } else {
                 $imageName = $pathOld;
-                $report = Report::find($id)->update([
-                    'title' => $request->title,
-                    'slug' => Str::slug($request->title),
-                    'thumbnail' => $imageName,
-                    'news' => $request->news
-                ]);
             }
         }
 
-        // if($request->file('thumbnail')) {
-        //     if(Storage::exists($pathOld)) {
-        //         Storage::delete($pathOld);
-        //     } else {
-        //         $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
-        //     }
-        // }
-
-        // $report = Report::find($id)->update([
-        //     'title' => $request->title,
-        //     'slug' => Str::slug($request->title),
-        //     'thumbnail' => $imageName,
-        //     'news' => $request->news
-        // ]);
+        $report = Report::find($id)->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'thumbnail' => $imageName,
+            'news' => $request->news
+        ]);
 
         return redirect()->route('berita.index')->with('status', 'Berita Baru Gereja Berhasil di Update');
     }
