@@ -206,6 +206,9 @@
                   </div>
                 </div>
               </div>
+              <div class="text-center">
+                <a href="{{ route('news') }}" class="btn btn-secondary mt-3">Berita Lainnya</a>
+              </div>
             </div>
           </div>
         </div>

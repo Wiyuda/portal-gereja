@@ -167,6 +167,10 @@ i.fa-arrow-up {
 
 /* Handphone */
 @media (max-width: 575.98px) {
+  .running-text {
+    display: none;
+  }
+
   .header .card h4, h5, p {
     line-height: 8px;
   }
