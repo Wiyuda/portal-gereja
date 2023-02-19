@@ -20,7 +20,7 @@
                 <select name="data" id="data" class="form-select @error('data') is-invalid @enderror">
                   <option>--Pilih Data--</option>
                   <option value="Jemaat">Jemaat</option>
-                  <option value="Kamin">Kawin</option>
+                  <option value="Kawin">Kawin</option>
                   <option value="Sidi">Sidi</option>
                   <option value="Monding">Monding</option>
                   <option value="Baptis">Baptis</option>
