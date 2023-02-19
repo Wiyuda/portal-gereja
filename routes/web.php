@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\MarriedController;
 use App\Http\Controllers\Admin\MondingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FamilyMemberController;
+use App\Http\Controllers\Admin\PrintController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\ReadNewsController;
 
@@ -89,5 +90,8 @@ Route::prefix('/admin')->group(function () {
 
     Route::resource('/banner', BannerController::class);
     Route::resource('/news', NewsController::class);
+
+    Route::get('/print', [PrintController::class, 'index'])->name('print');
+    Route::post('/print/data', [PrintController::class, 'print'])->name('print-data');
   });
 });

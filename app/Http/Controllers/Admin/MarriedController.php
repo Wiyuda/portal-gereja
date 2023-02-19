@@ -43,7 +43,9 @@ class MarriedController extends Controller
             'keterangan' => 'required'
         ]);
 
-        $married = Married::create($validate);
+        $married = new Married($validate);
+        $married['tahun'] = date('Y');
+        $married->save();
         return redirect()->route('kawin')->with('status', 'Data Kawin Berhasil di Tambahkan');
     }
 

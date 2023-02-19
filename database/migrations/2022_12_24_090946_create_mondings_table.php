@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('monding');
             $table->date('tanggal');
             $table->text('keterangan');
+            $table->string('tahun', 5);
             $table->softDeletes();
             $table->timestamps();
         });

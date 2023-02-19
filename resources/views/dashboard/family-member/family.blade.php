@@ -2,6 +2,10 @@
 @section('title', 'Admin | Data Anggota Keluarga')
 
 @section('content')
+@push('styles')
+  <link rel="stylesheet" href="{{ url('assets/library/years/css/style.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/library/years/css/yearpicker.css') }}">
+@endpush
   <div class="row">
     <div class="col-12">
       <div class="card shadow">
@@ -18,6 +22,13 @@
               </button>
             </div>
           @endif
+          <div class="d-flex justify-content-end">
+            <div class="row">
+              <div class="col-md-3">
+                <input type="text" class="yearpicker form-control my-0 py-0" value="" />
+              </div>
+            </div>
+          </div>
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -78,4 +89,18 @@
       </div>
     </div>
   </div>
+@push('scripts')
+  <script src="{{ url('assets/library/years/js/yearpicker.js') }}"></script>
+  <script>
+    let date = new Date();
+    let year = date.getFullYear();
+    $(document).ready(function() {
+      $(".yearpicker").yearpicker({
+        year: year,
+        startYear: 2010,
+        endYear: 2050
+      });
+    });
+  </script>
+@endpush
 @endsection

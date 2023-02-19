@@ -40,8 +40,9 @@ class BaptismController extends Controller
             'keterangan' => 'required'
         ]);
 
-        Baptism::create($validate);
-        
+        $baptis = new Baptism($validate);
+        $baptis['tahun'] = date('Y');
+        $baptis->save(); 
         return redirect()->route('baptis.index')->with('status', 'Data Baptis Berhasil di Tambahkan');
     }
 

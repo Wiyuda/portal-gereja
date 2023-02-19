@@ -40,7 +40,9 @@ class FamilyMemberController extends Controller
             'pendidikan' => 'required',
         ]);
 
-        $member = FamilyMember::create($validator);
+        $member = new FamilyMember($validator);
+        $member['tahun'] = date('Y');
+        $member->save();
 
         return redirect()->route('member.index')->with('status', 'Data Anggota Keluarga Berhasil di Tambahkan');
     }

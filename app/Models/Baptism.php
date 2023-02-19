@@ -10,7 +10,7 @@ class Baptism extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_id', 'family_member_id', 'baptis', 'tanggal', 'gereja', 'keterangan'];
+    protected $fillable = ['family_id', 'family_member_id', 'baptis', 'tanggal', 'gereja', 'keterangan', 'tahun'];
 
     public function families()
     {
