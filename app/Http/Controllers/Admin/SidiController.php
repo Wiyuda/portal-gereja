@@ -40,7 +40,9 @@ class SidiController extends Controller
             'keterangan' => 'required'
         ]);
         
-        Sidi::create($validator);
+        $sidi = new Sidi($validator);
+        $sidi['tahun'] = date('Y');
+        $sidi->save();
         return redirect()->route('sidi.index')->with('status', 'Data Sidi Jemaat Berhasil di Tambahkan');
     }
 

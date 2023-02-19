@@ -39,7 +39,9 @@ class MondingController extends Controller
             'keterangan' => 'required'
         ]);
 
-        $monding = Monding::create($validator);
+        $monding = new Monding($validator);
+        $monding['tahun'] = date('Y');
+        $monding->save();
 
         return redirect()->route('monding.index')->with('status', 'Data Jemaat Monding Berhasil di Tambahkan');
     }

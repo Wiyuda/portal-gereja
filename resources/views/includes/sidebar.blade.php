@@ -88,6 +88,12 @@
       </div>
     </div>
   </li>
+  <li class="nav-item mb-0">
+    <a class="nav-link mb-0 pb-0" href="{{ route('print') }}">
+      <i class="fa-solid fa-print"></i>
+      <span>Cetak Laporan</span>
+    </a>
+  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">

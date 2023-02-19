@@ -28,6 +28,7 @@ return new class extends Migration
             $table->enum('status_anak', ['Menikah', 'Orangtua'])->nullable();
             $table->enum('pendidikan', ['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3']);
             $table->enum('status', ['Janda', 'Duda'])->nullable();
+            $table->string('tahun', 5);
             $table->softDeletes();
             $table->timestamps();
         });

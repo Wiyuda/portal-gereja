@@ -10,7 +10,7 @@ class Sidi extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_id', 'family_member_id', 'sidi', 'tanggal', 'gereja', 'keterangan'];
+    protected $fillable = ['family_id', 'family_member_id', 'sidi', 'tanggal', 'gereja', 'keterangan', 'tahun'];
 
     public function families()
     {
