@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\FamilyMember;
+use App\Models\Married;
 use App\Models\Sector;
 use Illuminate\Http\Request;
 // use Barryvdh\DomPDF\Facade\Pdf;
@@ -29,9 +30,19 @@ class PrintController extends Controller
                 global $request;
                 return $query->where('sector_id', $request->sector)->where('tahun', $request->year);
             }))->get();
+
+            $year = $request->year;
+            $pdf = PDF::loadView('dashboard.print.print', compact('datas', 'year'))->setPaper('a4', 'landscape');
+            return $pdf->stream();
+        } elseif($request->data == 'Kawin') {
+            $datas = Married::whereHas('families', (function ($query) {
+                global $request;
+                return $query->where('sector_id', $request->sector)->where('tahun', $request->year);
+            }))->get();
+
+            $year = $request->year;
+            $pdf = PDF::loadView('dashboard.print.married', compact('datas', 'year'))->setPaper('a4', 'landscape');
+            return $pdf->stream();
         }
-        $year = $request->year;
-        $pdf = PDF::loadView('dashboard.print.print', compact('datas', 'year'))->setPaper('a4', 'landscape');
-        return $pdf->stream();
     }
 }
