@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cetak Data Sidi</title>
+  <title>Cetak Data Baptis</title>
   <style>
     body {
       text-align: center;
@@ -14,7 +14,7 @@
 <body>
   
   <h3>
-    Laporan Data Jemaat Sidi Gereja HKBP Bethel Resort Padang Bulan Distrik X-MA
+    Laporan Data Jemaat Baptis Gereja HKBP Bethel Resort Padang Bulan Distrik X-MA
     <br>
     Jalan Besar Tanjung Selamat No.168 Deli Serdang
     <br>
@@ -26,7 +26,7 @@
         <th>No</th>
         <th>Keluarga</th>
         <th>Nama</th>
-        <th>Sidi</th>
+        <th>Baptis</th>
         <th>Tanggal</th>
         <th>Gereja</th>
         <th>Tahun</th>
@@ -42,7 +42,7 @@
           <th>{{ $i++ }}</th>
           <th>{{ $data->families->keluarga }}</th>
           <th>{{ $data->family_members->nama }}</th>
-          <th>{{ $data->sidi }}</th>
+          <th>{{ $data->baptis }}</th>
           <th>{{ $data->tanggal }}</th>
           <th>{{ $data->gereja }}</th>
           <th>{{ $data->tahun }}</th>
