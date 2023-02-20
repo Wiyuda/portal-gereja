@@ -41,7 +41,7 @@
               <div class="form-group col-md-12">
                 <label for="sector">Sektor</label>
                 <select name="sector" id="sector" class="form-select @error('sector') is-invalid @enderror">
-                  <option>--Pilih Sector--</option>
+                  <option hidden>--Pilih Sector--</option>
                   @foreach ($sectors as $sector)
                       <option value="{{ $sector->id }}">{{ $sector->nama }}</option>
                   @endforeach
