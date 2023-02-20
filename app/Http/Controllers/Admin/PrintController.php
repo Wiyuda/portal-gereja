@@ -44,9 +44,5 @@ class PrintController extends Controller
             $pdf = PDF::loadView('dashboard.print.married', compact('datas', 'year'))->setPaper('a4', 'landscape');
             return $pdf->stream();
         }
-        
-        // $year = $request->year;
-        // $pdf = PDF::loadView('dashboard.print.print', compact('datas', 'year'))->setPaper('a4', 'landscape');
-        // return $pdf->stream();
     }
 }

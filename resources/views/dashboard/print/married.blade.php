@@ -14,7 +14,7 @@
 <body>
   
   <h3>
-    Laporan Data Kawin Gereja HKBP Bethel Resort Padang Bulan Distrik X-MA
+    Laporan Data Jemaat Menikah Gereja HKBP Bethel Resort Padang Bulan Distrik X-MA
     <br>
     Jalan Besar Tanjung Selamat No.168 Deli Serdang
     <br>
@@ -25,7 +25,7 @@
       <tr>
         <th>No</th>
         <th>Keluarga</th>
-        <th>Anggota Keluarga</th>
+        <th>Nama</th>
         <th>Kawin</th>
         <th>Nama Calon</th>
         <th>Asal Gereja Calon</th>
