@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\FamilyMember;
-use App\Models\Married;
-use App\Models\Monding;
-use App\Models\Sector;
-use Illuminate\Http\Request;
-// use Barryvdh\DomPDF\Facade\Pdf;
 use PDF;
+use App\Models\Sidi;
+use App\Models\Sector;
+use App\Models\Married;
+use App\Models\FamilyMember;
+// use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PrintController extends Controller
 {
@@ -44,14 +44,14 @@ class PrintController extends Controller
             $year = $request->year;
             $pdf = PDF::loadView('dashboard.print.married', compact('datas', 'year'))->setPaper('a4', 'landscape');
             return $pdf->stream();
-        } elseif($request->data == 'Monding') {
-            $datas = Monding::whereHas('families', (function ($query) {
+        } elseif($request->data == 'Sidi') {
+            $datas = Sidi::whereHas('families', (function ($query) {
                 global $request;
                 return $query->where('sector_id', $request->sector)->where('tahun', $request->year);
             }))->get();
 
             $year = $request->year;
-            $pdf = PDF::loadView('dashboard.print.monding', compact('datas', 'year'))->setPaper('a4', 'landscape');
+            $pdf = PDF::loadView('dashboard.print.sidi', compact('datas', 'year'))->setPaper('a4', 'landscape');
             return $pdf->stream();
         }
     }
