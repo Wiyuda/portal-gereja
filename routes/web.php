@@ -37,7 +37,7 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/post',[LoginController::class,'loginPost'])->name('loginPost');
 
 Route::get('/berita', [ReadNewsController::class, 'index'])->name('news');
-Route::get('/baca', [ReadNewsController::class, 'show'])->name('read');
+Route::get('/berita/baca/{id}', [ReadNewsController::class, 'show'])->name('read.show');
 
 Route::prefix('/admin')->group(function () {
   Route::middleware('auth')->group(function () {

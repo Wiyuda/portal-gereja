@@ -24,7 +24,11 @@
               Berita Terbaru : 
             </div>
             <div class="col-md-9 col-lg-10">
-              <marquee class="text-primary fw-semibold"><a href="{{ route('read') }}" class="text-decoration-none">Judul berita Gereja Yang Baru</a> </marquee>
+              <marquee class="text-primary fw-semibold">
+                @foreach ($titleReports as $tr)
+                  <a href="{{ route('read.show', $tr->id) }}" class="text-decoration-none">{{ $tr->title }}</a>
+                @endforeach 
+              </marquee>
             </div>
           </div>
           <div class="row">

@@ -36,7 +36,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ route('news') }}">Baca</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Judul Berita</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $report->title }}</li>
           </ol>
         </nav>
       </div>
@@ -50,14 +50,14 @@
           <div class="card">
             <div class="card-body">
               <div class="read-news-thumbnail">
-                <img src="{{ url('assets/images/gereja.jpg') }}" class="card-img-top" alt="Thumbnail">
+                <img src="{{ url('storage/thumbnail', $report->thumbnail) }}" class="card-img-top" alt="Thumbnail">
               </div>
               <div class="read-news-content mt-3">
-                <h3 class="text-center">Judul berita</h3>
-                <p>Beritanya apa ya wkwkwkwk</p>
+                <h3 class="text-center">{{ $report->title }}</h3>
+                <p>{!! $report->news !!}</p>
               </div>
               <div class="read-news-author">
-                <p class="text-primary">By Admin / 08-02-2023, 22:20</p>
+                <p class="text-primary">By Admin / {{ $report->created_at }}</p>
               </div>
             </div>
           </div>
@@ -65,46 +65,17 @@
         <div class="col-md-4 col-sm-12">
           <div class="card">
             <div class="card-body">
+              @foreach ($reports as $report)
               <div class="row mt-3">
                 <div class="col-4">
-                  <img src="{{ url('assets/images/gereja.jpg') }}" class="card-img-top" alt="Thumbnail">
+                  <img src="{{ url('storage/thumbnail/'. $report->thumbnail) }}" class="card-img-top" alt="Thumbnail">
                 </div>
                 <div class="col-8">
-                  <a href="{{ route('read') }}">Judul Berita Kami</a>
+                  <a href="{{ route('read.show', $report->id) }}">{{ $report->title }}</a><br>
+                  <span>{{ $report->created_at }}</span>
                 </div>
               </div>
-              <div class="row mt-3">
-                <div class="col-4">
-                  <img src="{{ url('assets/images/gereja.jpg') }}" class="card-img-top" alt="Thumbnail">
-                </div>
-                <div class="col-8">
-                  <a href="{{ route('read') }}">Judul Berita Kami</a>
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-4">
-                  <img src="{{ url('assets/images/gereja.jpg') }}" class="card-img-top" alt="Thumbnail">
-                </div>
-                <div class="col-8">
-                  <a href="{{ route('read') }}">Judul Berita Kami</a>
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-4">
-                  <img src="{{ url('assets/images/gereja.jpg') }}" class="card-img-top" alt="Thumbnail">
-                </div>
-                <div class="col-8">
-                  <a href="{{ route('read') }}">Judul Berita Kami</a>
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-4">
-                  <img src="{{ url('assets/images/gereja.jpg') }}" class="card-img-top" alt="Thumbnail">
-                </div>
-                <div class="col-8">
-                  <a href="{{ route('read') }}">Judul Berita Kami</a>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </div>

@@ -52,22 +52,24 @@
                 <h3 class="fw-bold">BERITA HARIAN</h3>
                 <hr>
                 <div class="row">
+                  @foreach ($reports as $report)
                   <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                     <div class="card shadow">
                       <div class="card-body p-0">
-                        <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
-                        <a href="{{ route('read') }}">
+                        <img src="{{ url('storage/thumbnail/'. $report->thumbnail) }}" alt="Thumbnail" class="rounded card-img-top">
+                        <a href="{{ route('read.show', $report->id) }}">
                           <div class="news-title text-center">
                             <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
                           </div>
                         </a>
                           <div class="news-time">
-                            <p>By <span>Admin</span> 07-02-2023, 18.00</p>
+                            <p>By <span>Admin</span> {{ $report->created_at }}</p>
                           </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+                  @endforeach
+                  {{-- <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                     <div class="card shadow">
                       <div class="card-body p-0">
                         <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
@@ -96,7 +98,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
