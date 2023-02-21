@@ -51,7 +51,7 @@
                       <a href="{{ route('berita.edit', $report->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>
                       </a>
-                      <a href="{{ route('berita.show', $report->id) }}" class="btn btn-info">
+                      <a href="{{ route('read.show', $report->id) }}" class="btn btn-info">
                         <i class="fas fa-info"></i>
                       </a>
                       <form action="{{ route('berita.destroy', $report->id) }}" method="POST" class="d-inline">
