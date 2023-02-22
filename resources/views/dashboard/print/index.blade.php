@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
 @section('title', 'Admin | Profil Gereja')
 @section('content')
-@push('styles')
+{{-- @push('styles')
   <link rel="stylesheet" href="{{ url('assets/library/years/css/style.css') }}">
   <link rel="stylesheet" href="{{ url('assets/library/years/css/yearpicker.css') }}">
-@endpush
+@endpush --}}
   <div class="row">
     <div class="col-12">
       <div class="card shadow">
@@ -31,7 +31,11 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="year">Tahun</label>
-                <input type="text" name="year" class="yearpicker form-control my-0 py-0 @error('year') is-invalid @enderror" value="" />
+                <select name="year" id="year" class="form-select @error('year') is-invalid @enderror">
+                  @foreach ($years as $year)
+                    <option value="{{ $year }}">{{ $year }}</option>
+                  @endforeach  
+                </select>
                 @error('year')
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
@@ -41,7 +45,7 @@
               <div class="form-group col-md-12">
                 <label for="sector">Sektor</label>
                 <select name="sector" id="sector" class="form-select @error('sector') is-invalid @enderror">
-                  <option hidden>--Pilih Sector--</option>
+                  <option value="All">All</option>
                   @foreach ($sectors as $sector)
                       <option value="{{ $sector->id }}">{{ $sector->nama }}</option>
                   @endforeach
@@ -59,18 +63,18 @@
       </div>
     </div>
   </div>
-@push('scripts')
+{{-- @push('scripts')
   <script src="{{ url('assets/library/years/js/yearpicker.js') }}"></script>
   <script>
     let date = new Date();
     let year = date.getFullYear();
     $(document).ready(function() {
       $(".yearpicker").yearpicker({
-        year: year,
+        year: All,
         startYear: 2010,
         endYear: 2050
       });
     });
   </script>
-@endpush
+@endpush --}}
 @endsection

@@ -33,11 +33,11 @@
                   <td>{{ $married->asal_gereja_calon }}</td>
                 </tr>
                 <tr>
-                  <th>Tanggal</th>
+                  <th>Tanggal Pemberkatan</th>
                   <td>{{ $married->tanggal }}</td>
                 </tr>
                 <tr>
-                  <th>Gereja</th>
+                  <th>Gereja Pemberkatan</th>
                   <td>{{ $married->gereja }}</td>
                 </tr>
                 <tr>

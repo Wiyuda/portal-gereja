@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-9 col-sm-12 col-12 text-center">
               <h4 class="fw-bold">HURIA KRISTEN BATAK PROTESTAN (HKBP)</h4>
-              <h5>BETHEL RESORT PADANG BULAN DISTRIK X-MA</h5>
+              <h5>HKBP BETHEL RESORT PERSIAPAN BETHEL RESORT PADANG BULAN DISTRIK X MEDAN ACEH</h5>
               <p>Jl. Besar Tj, Selamat No. 168, Deli Serdang</p>
             </div>
           </div>

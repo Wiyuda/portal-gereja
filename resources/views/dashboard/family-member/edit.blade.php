@@ -167,17 +167,17 @@
 
   @push('scripts')
       <script>
+        let status = '{{ $family->status_keluarga }}';
+        console.log(status)
+        if(status == 'Anak') {
+          document.getElementById('status_anak').removeAttribute('disabled');
+        }
         function handleStatus() {
           let statusKeluarga = document.getElementById('status_keluarga').value;
           if(statusKeluarga == 'Ayah' || statusKeluarga == "Ibu" || statusKeluarga == '--Pilih Status Keluarga--') {
             document.getElementById('status_anak').setAttribute('disabled', true);
           } else {
             document.getElementById('status_anak').removeAttribute('disabled');
-          }
-          if(statusKeluarga == 'Anak' || statusKeluarga == '--Pilih Status Keluarga--') {
-            document.getElementById('status').setAttribute('disabled', true);
-          } else {
-            document.getElementById('status').removeAttribute('disabled');
           }
         }
       </script>

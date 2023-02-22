@@ -20,9 +20,9 @@ class FamilyMemberController extends Controller
         $families = Family::all();
         $genders = ['Laki-Laki', 'Perempuan'];
         $familyStatuses = ['Ayah', 'Ibu', 'Anak'];
-        $childStatuses = ['Menikah', 'Orangtua'];
-        $educations = ['SD','SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
-        $statuses = ['Janda', 'Duda'];
+        $childStatuses = ['Anak Kandung', 'Anak Angkat'];
+        $educations = ['Belum Sekolah', 'SD','SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
+        $statuses = ['Hidup', 'Almarhum'];
         return view('dashboard.family-member.create', compact('families', 'genders', 'familyStatuses', 'childStatuses', 'educations', 'statuses'));
     }
 
@@ -37,7 +37,9 @@ class FamilyMemberController extends Controller
             'no_hp' => 'required|max:13',
             'alamat' => 'required',
             'status_keluarga' => 'required',
+            'status_anak' => 'nullable',
             'pendidikan' => 'required',
+            'status' => 'required'
         ]);
 
         $member = new FamilyMember($validator);
@@ -59,9 +61,9 @@ class FamilyMemberController extends Controller
         $families = Family::all();
         $genders = ['Laki-Laki', 'Perempuan'];
         $familyStatuses = ['Ayah', 'Ibu', 'Anak'];
-        $childStatuses = ['Menikah', 'Orangtua'];
-        $educations = ['SD','SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
-        $statuses = ['Janda', 'Duda'];
+        $childStatuses = ['Anak Kandung', 'Anak Angkat'];
+        $educations = ['Belum Sekolah', 'SD','SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
+        $statuses = ['Hidup', 'Almarhum'];
         return view('dashboard.family-member.edit', compact('family', 'families', 'genders', 'familyStatuses', 'childStatuses', 'educations', 'statuses'));
     }
 
@@ -76,7 +78,9 @@ class FamilyMemberController extends Controller
             'no_hp' => 'required|max:13',
             'alamat' => 'required',
             'status_keluarga' => 'required',
+            'status_anak' => 'nullable',
             'pendidikan' => 'required',
+            'status' => 'required'
         ]);
 
         $member = FamilyMember::find($id)->update($validator);

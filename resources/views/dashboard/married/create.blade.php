@@ -56,7 +56,7 @@
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="tanggal">Tanggal</label>
+                <label for="tanggal">Tanggal Pemberkatan</label>
                 <input type="date" name="tanggal" id="tanggal" class="form-control @error('tanggal') is-invalid @enderror" placeholder="Input tanggal">
                 @error('tanggal')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
@@ -65,7 +65,7 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="gereja">Gereja</label>
+                <label for="gereja">Gereja Pemberkatan</label>
                 <input type="text" name="gereja" id="gereja" class="form-control @error('gereja') is-invalid @enderror" placeholder="Input gereja">
                 @error('gereja')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>

@@ -18,7 +18,7 @@
     <br>
     Jalan Besar Tanjung Selamat No.168 Deli Serdang
     <br>
-    Tahun {{ $year }}
+    {{ $year }} {{ $sector }}
   </h3>
   <table border="1px solid #000" cellspacing="0" cellpadding="10px" style="width: 100%">
     <thead>
@@ -44,17 +44,17 @@
       @foreach ($datas as $data)
         <tr>
           <th>{{ $i++ }}</th>
-          <th>{{ $data->families->keluarga }}</th>
-          <th>{{ $data->nama }}</th>
-          <th>{{ $data->tgl_lahir }}</th>
-          <th>{{ $data->tempat_lahir }}</th>
-          <th>{{ $data->jenis_kelamin }}</th>
-          <th>{{ $data->no_hp }}</th>
-          <th>{{ $data->alamat }}</th>
-          <th>{{ $data->status_keluarga }}</th>
-          <th>{{ $data->status_anak }}</th>
-          <th>{{ $data->pendidikan }}</th>
-          <th>{{ $data->status }}</th>
+          <td>{{ $data->families->keluarga }}</td>
+          <td>{{ $data->nama }}</td>
+          <td>{{ $data->tgl_lahir }}</td>
+          <td>{{ $data->tempat_lahir }}</td>
+          <td>{{ $data->jenis_kelamin }}</td>
+          <td>{{ $data->no_hp }}</td>
+          <td>{{ $data->alamat }}</td>
+          <td>{{ $data->status_keluarga }}</td>
+          <td>{{ $data->status_anak }}</td>
+          <td>{{ $data->pendidikan }}</td>
+          <td>{{ $data->status }}</td>
         </tr>
       @endforeach
     </tbody>

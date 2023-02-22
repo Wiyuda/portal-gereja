@@ -149,11 +149,6 @@
           } else {
             document.getElementById('status_anak').removeAttribute('disabled');
           }
-          if(statusKeluarga == 'Anak' || statusKeluarga == '--Pilih Status Keluarga--') {
-            document.getElementById('status').setAttribute('disabled', true);
-          } else {
-            document.getElementById('status').removeAttribute('disabled');
-          }
         }
       </script>
   @endpush

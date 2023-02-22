@@ -18,7 +18,7 @@
     <br>
     Jalan Besar Tanjung Selamat No.168 Deli Serdang
     <br>
-    Tahun {{ $year }}
+    {{ $year }} {{ $sector }}
   </h3>
   <table border="1px solid #000" cellspacing="0" cellpadding="10px" style="width: 100%">
     <thead>
@@ -29,8 +29,8 @@
         <th>Kawin</th>
         <th>Nama Calon</th>
         <th>Asal Gereja Calon</th>
-        <th>Tanggal</th>
-        <th>Gereja</th>
+        <th>Tanggal Pemberkatan</th>
+        <th>Gereja Pemberkatan</th>
         <th>Keterangan</th>
       </tr>
     </thead>
@@ -41,14 +41,14 @@
       @foreach ($datas as $data)
         <tr>
           <th>{{ $i++ }}</th>
-          <th>{{ $data->families->keluarga }}</th>
-          <th>{{ $data->family_members->nama }}</th>
-          <th>{{ $data->kawin }}</th>
-          <th>{{ $data->nama_calon }}</th>
-          <th>{{ $data->asal_gereja_calon }}</th>
-          <th>{{ $data->tanggal }}</th>
-          <th>{{ $data->gereja }}</th>
-          <th>{{ $data->keterangan }}</th>
+          <td>{{ $data->families->keluarga }}</td>
+          <td>{{ $data->family_members->nama }}</td>
+          <td>{{ $data->kawin }}</td>
+          <td>{{ $data->nama_calon }}</td>
+          <td>{{ $data->asal_gereja_calon }}</td>
+          <td>{{ $data->tanggal }}</td>
+          <td>{{ $data->gereja }}</td>
+          <td>{{ $data->keterangan }}</td>
         </tr>
       @endforeach
     </tbody>
