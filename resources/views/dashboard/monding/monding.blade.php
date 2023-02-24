@@ -51,13 +51,10 @@
                     <td>{{ $i++ }}</td>
                     <td>{{ $monding->families->keluarga }}</td>
                     <td>{{ $monding->family_members->nama }}</td>
-                    <td>{{ $monding->monding }}</td>
+                    <td>{{ $monding->family_members->status }}</td>
                     <td>{{ $monding->tanggal }}</td>
                     <td>{{ $monding->keterangan }}</td>
                     <td width="11%">
-                      <a href="{{ route('monding.edit', $monding->id) }}" class="btn btn-success">
-                        <i class="fas fa-pen"></i>
-                      </a>
                       <form action="{{ route('monding.destroy', $monding->id) }}" method="POST" class="d-inline">
                         @csrf
                         <button type="submit" class="btn btn-danger">

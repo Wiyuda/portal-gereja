@@ -19,7 +19,7 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         }
 
-        $family_member = FamilyMember::all()->count();
+        $family_member = FamilyMember::where('status', 'Hidup')->get()->count();
         $family = Family::all()->count();
         $profile = Profile::first();
         $sintuas = explode(',',$profile->sintua);

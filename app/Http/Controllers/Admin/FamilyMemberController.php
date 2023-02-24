@@ -11,7 +11,7 @@ class FamilyMemberController extends Controller
 {
     public function index()
     {
-        $members = FamilyMember::with('families')->orderBy('id', 'desc')->get();
+        $members = FamilyMember::with('families')->where('status', 'Hidup')->orderBy('id', 'desc')->get();
         return view('dashboard.family-member.family', compact('members'));
     }
 

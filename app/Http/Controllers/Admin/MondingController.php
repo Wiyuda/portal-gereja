@@ -12,7 +12,9 @@ class MondingController extends Controller
 {
     public function index()
     {
-        $mondings = Monding::with('family_members')->orderBy('id', 'desc')->get();
+        $mondings = Monding::whereHas('family_members', (function ($query) {
+            return $query->where('status', 'Almarhum');
+        }))->get();
         return view('dashboard.monding.monding', compact('mondings'));
     }
 
@@ -39,9 +41,12 @@ class MondingController extends Controller
             'keterangan' => 'required'
         ]);
 
+        $family = FamilyMember::where('id', $validator['family_member_id'])->first();
         $monding = new Monding($validator);
         $monding['tahun'] = date('Y');
         $monding->save();
+        $family['status'] = 'Almarhum';
+        $family->save();
 
         return redirect()->route('monding.index')->with('status', 'Data Jemaat Monding Berhasil di Tambahkan');
     }
