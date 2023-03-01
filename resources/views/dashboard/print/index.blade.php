@@ -1,10 +1,6 @@
 @extends('layouts.dashboard')
 @section('title', 'Admin | Profil Gereja')
 @section('content')
-{{-- @push('styles')
-  <link rel="stylesheet" href="{{ url('assets/library/years/css/style.css') }}">
-  <link rel="stylesheet" href="{{ url('assets/library/years/css/yearpicker.css') }}">
-@endpush --}}
   <div class="row">
     <div class="col-12">
       <div class="card shadow">
@@ -30,19 +26,22 @@
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="year">Tahun</label>
-                <select name="year" id="year" class="form-select @error('year') is-invalid @enderror">
-                  @foreach ($years as $year)
-                    <option value="{{ $year }}">{{ $year }}</option>
-                  @endforeach  
-                </select>
-                @error('year')
+                <label for="start">Tanggal Awal</label>
+                <input type="date" name="start" class="form-control @error('start') is-invalid @enderror" id="start">
+                @error('start')
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
+                <label for="end">Tanggal Akhir</label>
+                <input type="date" name="end" class="form-control @error('end') is-invalid @enderror" id="end">
+                @error('end')
+                  <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
                 <label for="sector">Sektor</label>
                 <select name="sector" id="sector" class="form-select @error('sector') is-invalid @enderror">
                   <option value="All">All</option>
@@ -63,18 +62,4 @@
       </div>
     </div>
   </div>
-{{-- @push('scripts')
-  <script src="{{ url('assets/library/years/js/yearpicker.js') }}"></script>
-  <script>
-    let date = new Date();
-    let year = date.getFullYear();
-    $(document).ready(function() {
-      $(".yearpicker").yearpicker({
-        year: All,
-        startYear: 2010,
-        endYear: 2050
-      });
-    });
-  </script>
-@endpush --}}
 @endsection

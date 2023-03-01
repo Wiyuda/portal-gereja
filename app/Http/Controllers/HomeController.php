@@ -24,7 +24,7 @@ class HomeController extends Controller
         $profile = Profile::first();
         $sintuas = explode(',',$profile->sintua);
         $news = News::all();
-        $sintua = Profile::all()->count();
+        $sintua = count($sintuas);
         $banner = Banner::first();
         $reports = Report::orderBy('id', 'desc')->limit(3)->get();
         $titleReports = Report::orderBy('id', 'desc')->limit(5)->get();

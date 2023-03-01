@@ -17,8 +17,6 @@
     Laporan Data Jemaat Gereja HKBP Bethel Resort Padang Bulan Distrik X-MA
     <br>
     Jalan Besar Tanjung Selamat No.168 Deli Serdang
-    <br>
-    {{ $year }} {{ $sector }}
   </h3>
   <table border="1px solid #000" cellspacing="0" cellpadding="10px" style="width: 100%">
     <thead>
