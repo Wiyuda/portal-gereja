@@ -291,7 +291,7 @@
                       <td>{{ $warta->minggu }}</td>
                       <td>{{ $warta->tanggal }}</td>
                       <td>
-                        <a href="{{ url('storage/warta/' , $warta->warta) }}" target="_blank" rel="noopener noreferrer">Download</a>
+                        <a href="{{ url('storage/warta' , $warta->warta) }}" target="_blank" rel="noopener noreferrer">Download</a>
                       </td>
                     </tr>
                     @endforeach
