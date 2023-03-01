@@ -66,10 +66,10 @@ class ReportController extends Controller
             $destination = 'storage/thumbnail/'. $thumbnailOld->thumbnail;
             if(File::exists($destination)) {
                 File::delete($destination);
-                $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
-                $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
-                $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
             }
+            $extenstion = $request->file('thumbnail')->getClientOriginalExtension();
+            $imageName = 'thumbnail' . '-' . rand() . '.' .$extenstion;
+            $path = $request->file('thumbnail')->storeAs('thumbnail', $imageName, 'public'); 
         } else {
             $imageName = $thumbnailOld->thumbnail;
         }

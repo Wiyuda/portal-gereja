@@ -21,17 +21,22 @@ class ProfilController extends Controller
     }
 
     public function update(Request $request, $id) {
+        $profil = Profile::find($id);
         $validate = $request->validate([
             'pendeta_resort' => 'required|max:50',
             'pendeta_jemaat' => 'required|max:50',
             'guru_huria' => 'required|max:50',
             'sintua' => 'required',
-            'image' => 'image|file|max:2048|mimes:jpg,jpeg,png|required'
+            'image' => 'image|file|max:2048|mimes:jpg,jpeg,png'
         ]);
 
-        $extension = $request->file('image')->getClientOriginalExtension();
-        $image = 'profile' . '-' .rand(). '.'. $extension;
-        $path = $request->file('image')->storeAs('profile', $image, 'public');
+        if(is_null($request->file('image'))) {
+            $image = $profil->image; 
+        } else {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $image = 'profile' . '-' .rand(). '.'. $extension;
+            $path = $request->file('image')->storeAs('profile', $image, 'public');
+        }
 
         Profile::find($id)->update([
             'pendeta_resort' => $request->pendeta_resort,
