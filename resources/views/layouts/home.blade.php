@@ -19,18 +19,6 @@
     <div class="card">
       <div class="card-body">
         <div class="container">
-          <div class="row running-text">
-            <div class="col-md-3 col-lg-2 fw-bold text-primary">
-              Berita Terbaru : 
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <marquee class="text-primary fw-semibold">
-                @foreach ($titleReports as $tr)
-                  <a href="{{ route('read.show', $tr->id) }}" class="text-decoration-none">{{ $tr->title }}</a>
-                @endforeach 
-              </marquee>
-            </div>
-          </div>
           <div class="row">
             <div class="col-md-3 d-md-block d-none">
               <img src="{{ url('./assets/images/logo.png') }}" alt="Logo Gereja">

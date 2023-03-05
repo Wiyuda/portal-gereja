@@ -36,8 +36,23 @@
   </nav>
   {{-- End Navbar --}}
 
+  <div class="container">
+    <div class="row running-text mt-4">
+      <div class="col-md-3 col-lg-2 fw-bold text-primary">
+        Berita Terbaru : 
+      </div>
+      <div class="col-md-9 col-lg-10">
+        <marquee class="text-primary fw-semibold">
+          @foreach ($titleReports as $tr)
+            <a href="{{ route('read.show', $tr->id) }}" class="text-decoration-none">{{ $tr->title }}</a>
+          @endforeach 
+        </marquee>
+      </div>
+    </div>
+  </div>
+
   {{-- Banner --}}
-  <div class="banner mt-5 mb-5">
+  <div class="banner mt-4 mb-5">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -272,10 +287,9 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Keterangan</th>
-                      <th>Warta</th>
                       <th>Minggu</th>
                       <th>Tanggal</th>
+                      <th>Keterangan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -286,10 +300,9 @@
                     @foreach ($news as $warta)
                     <tr>
                       <th>{{ $no++ }}</th>
-                      <td>{{ $warta->keterangan }}</td>
-                      <td>{{ $warta->warta }}</td>
                       <td>{{ $warta->minggu }}</td>
                       <td>{{ $warta->tanggal }}</td>
+                      <td>{{ $warta->keterangan }}</td>
                       <td>
                         <a href="{{ url('storage/warta' , $warta->warta) }}" target="_blank" rel="noopener noreferrer">Download</a>
                       </td>
