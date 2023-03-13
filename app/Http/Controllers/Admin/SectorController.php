@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Sector;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SectorController extends Controller
 {
@@ -41,7 +42,7 @@ class SectorController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'sektor' => 'required|unique:sectors,sektor|uppercase',
+            'sektor' => 'required|uppercase', Rule::exists('sectors', 'sektor'),
             'nama' => 'required',
             'keterangan' => 'required'
         ]);

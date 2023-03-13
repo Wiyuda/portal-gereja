@@ -147,6 +147,10 @@ footer img.logo-ubd {
   width: 90px;
 }
 
+footer img.logo-bpc {
+  width: 140px;
+}
+
 footer .social-media img {
   width: 28px;
 }
@@ -389,6 +393,10 @@ i.fa-arrow-up {
   
   footer img.logo-ubd {
     width: 80px;
+  }
+
+  footer img.logo-bpc {
+    width: 120px;
   }
 
   footer .social-media img {

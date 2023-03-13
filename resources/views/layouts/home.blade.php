@@ -49,6 +49,7 @@
         <div class="col-md-4 col-sm-6">
           <h3 class="fw-bold">Powered By</h3>
           <img src="{{ url('./assets/images/logo_ubd.png') }}" alt="Logo UBD" class="logo-ubd mt-2">
+          <img src="{{ url('./assets/images/logo200.png') }}" alt="Logo BPC" class="logo-bpc mt-2">
         </div>
         <div class="col-md-4 col-sm-12 col-12">
           <div class="social-media">
