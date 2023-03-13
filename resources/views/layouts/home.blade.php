@@ -10,7 +10,9 @@
 
   <link rel="stylesheet" href="{{url('./assets/css/style.css')}}">
 
+  <link href="{{ url('./assets/library/template/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
   
@@ -78,11 +80,17 @@
   </footer>
   {{-- End Footer --}}
 
+  <script src="{{ url('./assets/library/template/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url('./assets/library/bootstrap/js/bootstrap.min.js') }}"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="{{ url('./assets/library/smoot-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
+
+  {{-- Datatables --}}
+  <script src="{{ url('./assets/library/template/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ url('./assets/library/template/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ url('./assets/library/template/js/demo/datatables-demo.js') }}"></script>
 
   @stack('scripts')
 

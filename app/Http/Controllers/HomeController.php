@@ -21,6 +21,7 @@ class HomeController extends Controller
 
         $family_member = FamilyMember::where('status', 'Hidup')->get()->count();
         $family = Family::all()->count();
+        $families = Family::all();
         $profile = Profile::first();
         $sintuas = explode(',',$profile->sintua);
         $news = News::all();
@@ -29,6 +30,6 @@ class HomeController extends Controller
         $reports = Report::orderBy('id', 'desc')->limit(3)->get();
         $titleReports = Report::orderBy('id', 'desc')->limit(5)->get();
 
-        return view('home', compact('family_member', 'family', 'profile', 'news', 'sintua', 'banner', 'sintuas', 'reports', 'titleReports'));
+        return view('home', compact('family_member', 'families', 'family', 'profile', 'news', 'sintua', 'banner', 'sintuas', 'reports', 'titleReports'));
     }
 }

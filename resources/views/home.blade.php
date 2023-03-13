@@ -319,6 +319,50 @@
   </div>
   {{-- End Warta --}}
 
+  {{-- Jemaat --}}
+  <div class="congregation mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="fw-bold">Data Jemaat Gereja</h3>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Keluarga</th>
+                      <th>Status Keluarga</th>
+                      <th>Sektor</th>
+                      <th>Alamat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($families as $family)
+                    <tr>
+                      <th>{{ $no++ }}</th>
+                      <td>{{ $family->keluarga }}</td>
+                      <td>{{ $family->status }}</td>
+                      <td>{{ $family->sectors->sektor }}</td>
+                      <td>{{ $family->familyMembers[0]->alamat }}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- Jemaat --}}
+
   @push('scripts')
       <script>
         const ctx = document.getElementById('myChart');

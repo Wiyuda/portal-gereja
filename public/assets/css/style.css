@@ -117,6 +117,11 @@ body {
   font-size: 20px;
 }
 
+.congregation h3 {
+  font-size: 24px;
+  line-height: 13px;
+}
+
 canvas {
   margin: auto;
   padding: auto;
@@ -155,7 +160,7 @@ footer .social-media img {
   width: 28px;
 }
 
-.profil hr, .news hr, .statistik hr, .warta hr {
+.profil hr, .news hr, .statistik hr, .warta hr, .congregation hr {
   height: 5px;
   background-color: #000;
 }
@@ -270,6 +275,14 @@ i.fa-arrow-up {
     font-size: 24px;
   }
 
+  .warta h3 {
+    font-size: 16px;
+  }
+
+  .congregation h3 {
+    font-size: 16px;
+  }
+
   footer {
     height: 460px;
   }
@@ -381,6 +394,14 @@ i.fa-arrow-up {
 
   .statistik i.fa-2x {
     font-size: 26px;
+  }
+
+  .warta h3 {
+    font-size: 20px;
+  }
+
+  .congregation h3 {
+    font-size: 20px;
   }
 
   footer h3 {
