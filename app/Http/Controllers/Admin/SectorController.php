@@ -41,13 +41,14 @@ class SectorController extends Controller
 
     public function update(Request $request, $id)
     {
+        $sector = Sector::find($id);
         $validate = $request->validate([
-            'sektor' => 'required|uppercase', Rule::exists('sectors', 'sektor'),
+            'sektor' => 'required|uppercase', Rule::unique('sectors')->ignore($sector->id),
             'nama' => 'required',
             'keterangan' => 'required'
         ]);
 
-        $sector = Sector::find($id)->update($validate);
+        $sector->update($validate);
 
         return redirect()->route('sektor.index')->with('status', 'Data Sektor Berhasil di Update');
     }
