@@ -21,7 +21,7 @@ class HomeController extends Controller
 
         $family_member = FamilyMember::where('status', 'Hidup')->get()->count();
         $family = Family::all()->count();
-        $families = Family::all();
+        $families = FamilyMember::where('status', 'hidup')->orderBy('id', 'desc')->get();
         $profile = Profile::first();
         $sintuas = explode(',',$profile->sintua);
         $news = News::all();
