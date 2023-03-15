@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProgrammerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -38,6 +39,8 @@ Route::post('/login/post',[LoginController::class,'loginPost'])->name('loginPost
 
 Route::get('/berita', [ReadNewsController::class, 'index'])->name('news');
 Route::get('/berita/baca/{id}', [ReadNewsController::class, 'show'])->name('read.show');
+
+Route::get('/developer', [ProgrammerController::class, 'index'])->name('developer');
 
 Route::prefix('/admin')->group(function () {
   Route::middleware('auth')->group(function () {
