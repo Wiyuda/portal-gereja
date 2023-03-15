@@ -134,6 +134,17 @@ canvas {
   line-height: 13px;
 }
 
+.developer .title h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.developer .description .profile img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
 footer {
   width: 100%;
   height: 300px;
@@ -156,11 +167,21 @@ footer img.logo-bpc {
   width: 140px;
 }
 
+footer a {
+  color: #bbbbbb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #9b9b9b;
+}
+
 footer .social-media img {
   width: 28px;
 }
 
-.profil hr, .news hr, .statistik hr, .warta hr, .congregation hr {
+.profil hr, .news hr, .statistik hr, .warta hr, .congregation hr, .developer hr{
   height: 5px;
   background-color: #000;
 }
@@ -283,8 +304,21 @@ i.fa-arrow-up {
     font-size: 16px;
   }
 
+  .developer .title h3 {
+    font-size: 16px;
+  }
+  
+  .developer .description .profile img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .developer .description .abbout table tr th, td {
+    font-size: 16px;
+  }
+
   footer {
-    height: 460px;
+    height: 560px;
   }
 
   footer h3 {
@@ -300,6 +334,10 @@ i.fa-arrow-up {
   
   footer img.logo-ubd {
     width: 70px;
+  }
+
+  footer a {
+    font-size: 14px;
   }
 
   footer .social-media img {
@@ -404,6 +442,23 @@ i.fa-arrow-up {
     font-size: 20px;
   }
 
+  .developer .title h3 {
+    font-size: 20px;
+  }
+  
+  .developer .description .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .developer .description .abbout table tr th, td {
+    font-size: 18px;
+  }
+
+  footer {
+    height: 400px;
+  }
+
   footer h3 {
     font-size: 16px;
   }
@@ -420,6 +475,10 @@ i.fa-arrow-up {
     width: 120px;
   }
 
+  footer a {
+    font-size: 16px;
+  }
+
   footer .social-media img {
     width: 20px;
   }
@@ -433,6 +492,10 @@ i.fa-arrow-up {
 @media (min-width: 769px) and (max-width: 992px) {
   .profil  h5.card-title {
     line-height: 20px;
+  }
+
+  footer {
+    height: 420px;
   }
 
   footer h3 {
@@ -454,5 +517,11 @@ i.fa-arrow-up {
   footer p.text-muted {
     line-height: 20px;
     font-size: 16px;
+  }
+} 
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  footer {
+    height: 400px;
   }
 }
