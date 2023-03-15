@@ -25,7 +25,7 @@ class NewsController extends Controller
             'tanggal' => 'date|required',
             'minggu' => 'required|max:50',
             'warta' => 'file|max:2048|mimes:pdf|required',
-            'keterangan' => 'required'
+            'keterangan' => 'nullable'
         ]);
 
         $extension = $request->file('warta')->getClientOriginalExtension();
