@@ -18,6 +18,17 @@
           <li class="nav-item">
             <a class="nav-link fw-bold me-4" href="{{ route('news') }}">Berita</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Buku
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" target="_blank" href="https://batakpedia.org/daftar-lagu-buku-ende/">Lagu Buku Ende</a></li>
+              <li><a class="dropdown-item" target="_blank" href="https://bukunyanyianhkbp.com/daftar-lagu/">Nyanyian HKBP</a></li>
+              <li><a class="dropdown-item" target="_blank" href="https://alkitabtoba.wordpress.com/">Alkitab Bahasa Batak</a></li>
+              <li><a class="dropdown-item" target="_blank" href="https://www.sabda.org/alkitab/">Alkitab Bahasa Indonesia</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="d-flex">
           <a href="{{ route('login') }}" class="btn btn-login btn-primary fw-bold px-3">Login</a>
