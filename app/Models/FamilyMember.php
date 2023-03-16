@@ -26,4 +26,9 @@ class FamilyMember extends Model
     {
         return $this->hasOne(Monding::class, 'id');
     }
+
+    public function shifts()
+    {
+        return $this->hasOne(Shift::class, 'id');
+    }
 }

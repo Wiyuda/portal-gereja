@@ -21,4 +21,9 @@ class Family extends Model
     {
         return $this->hasMany(FamilyMember::class, 'id');
     }
+
+    public function shifts()
+    {
+        return $this->hasMany(Shift::class, 'id');
+    }
 }

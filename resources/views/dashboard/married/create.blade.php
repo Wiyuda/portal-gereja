@@ -94,31 +94,31 @@
   @push('scripts')
   <script>
     $(document).ready(function() {
-    $('#family_id').on('change', function() {
-       var categoryID = $(this).val();
-       if(categoryID) {
-           $.ajax({
-               url: '/admin/getFamilyMember/'+categoryID,
-               type: "GET",
-               data : {"_token":"{{ csrf_token() }}"},
-               dataType: "json",
-               success:function(data)
-               {
-                 if(data){
-                    $('#family_member_id').empty();
-                    $('#family_member_id').append('<option hidden>--Pilih Anggota Keluarga--</option>'); 
-                    $.each(data, function(key, family_member_id){
-                        $('select[name="family_member_id"]').append('<option value="'+ family_member_id.id +'">' + family_member_id.nama+ '</option>');
-                    });
-                }else{
-                    $('#family_member_id').empty();
-                }
-             }
-           });
-       }else{
-         $('#family_member_id').empty();
-       }
-    });
+      $('#family_id').on('change', function() {
+        var categoryID = $(this).val();
+        if(categoryID) {
+            $.ajax({
+                url: '/admin/getFamilyMember/'+categoryID,
+                type: "GET",
+                data : {"_token":"{{ csrf_token() }}"},
+                dataType: "json",
+                success:function(data)
+                {
+                  if(data){
+                      $('#family_member_id').empty();
+                      $('#family_member_id').append('<option hidden>--Pilih Anggota Keluarga--</option>'); 
+                      $.each(data, function(key, family_member_id){
+                          $('select[name="family_member_id"]').append('<option value="'+ family_member_id.id +'">' + family_member_id.nama+ '</option>');
+                      });
+                  }else{
+                      $('#family_member_id').empty();
+                  }
+              }
+            });
+        }else{
+          $('#family_member_id').empty();
+        }
+      });
     });
   </script>
   @endpush
