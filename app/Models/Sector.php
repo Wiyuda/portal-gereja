@@ -16,4 +16,9 @@ class Sector extends Model
     {
         return $this->hasMany(Family::class, 'id');
     }
+
+    public function shifts()
+    {
+        return $this->hasMany(Shift::class, 'id');
+    }
 }
