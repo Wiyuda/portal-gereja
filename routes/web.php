@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\AxiosController;
 use App\Http\Controllers\Admin\GoOutController;
 use App\Http\Controllers\Admin\ShiftController;
@@ -100,6 +101,8 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/pindah', ShiftController::class);
 
     Route::resource('/keluar', GoOutController::class);
+
+    Route::resource('/kegiatan', ActivityController::class);
 
     Route::get('/print', [PrintController::class, 'index'])->name('print');
     Route::post('/print/data', [PrintController::class, 'print'])->name('print-data');
