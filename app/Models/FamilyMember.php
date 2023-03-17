@@ -31,4 +31,9 @@ class FamilyMember extends Model
     {
         return $this->hasOne(Shift::class, 'id');
     }
+
+    public function goOuts()
+    {
+        return $this->hasOne(Shift::class, 'id');
+    }
 }

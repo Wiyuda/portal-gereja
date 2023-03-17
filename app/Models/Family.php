@@ -26,4 +26,9 @@ class Family extends Model
     {
         return $this->hasMany(Shift::class, 'id');
     }
+
+    public function goOuts()
+    {
+        return $this->hasMany(Shift::class, 'id');
+    }
 }

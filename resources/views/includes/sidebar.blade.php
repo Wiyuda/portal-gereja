@@ -73,6 +73,7 @@
         <a class="collapse-item" href="{{ route('monding.index') }}">Monding</a>
         <a class="collapse-item" href="{{ route('baptis.index') }}">Baptis</a>
         <a class="collapse-item" href="{{ route('pindah.index') }}">Pindah Gereja</a>
+        <a class="collapse-item" href="{{ route('keluar.index') }}">Keluar Gereja</a>
       </div>
     </div>
   </li>

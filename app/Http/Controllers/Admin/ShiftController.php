@@ -56,7 +56,6 @@ class ShiftController extends Controller
 
     public function update(Request $request , $id)
     {   
-        $shifts = Shift::all();
         $shift = Shift::find($id);
 
         $validated = $request->validate([
