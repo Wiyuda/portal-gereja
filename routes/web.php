@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AxiosController;
+use App\Http\Controllers\Admin\GoOutController;
 use App\Http\Controllers\Admin\ShiftController;
 use App\Http\Controllers\ProgrammerController;
 use Illuminate\Support\Facades\Route;
@@ -96,7 +97,9 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/banner', BannerController::class);
     Route::resource('/news', NewsController::class);
 
-    Route::resource('pindah', ShiftController::class);
+    Route::resource('/pindah', ShiftController::class);
+
+    Route::resource('/keluar', GoOutController::class);
 
     Route::get('/print', [PrintController::class, 'index'])->name('print');
     Route::post('/print/data', [PrintController::class, 'print'])->name('print-data');
