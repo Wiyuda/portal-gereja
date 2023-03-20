@@ -38,10 +38,26 @@
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="keluarga">Keluarga</label>
                 <input type="text" name="keluarga" id="keluarga" class="form-control @error('keluarga') is-invalid @enderror" placeholder="Input nama keluarga"value={{ $family->keluarga }}>
                 @error('keluarga')
+                  <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
+                <label for="status">Status</label>
+                <select name="status" id="status" class="form-control">
+                  <option>--Pilih Status--</option>
+                  @foreach ($statuses as $status)
+                    @if ($status == $family->status)
+                      <option value="{{ $status }}" selected>{{ $status }}</option>  
+                    @else
+                      <option value="{{ $status }}">{{ $status }}</option>
+                    @endif
+                  @endforeach
+                </select>
+                @error('status')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
