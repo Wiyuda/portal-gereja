@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('families', function (Blueprint $table) {
-            $table->enum('status', ['Janda', 'Duda'])->after('keluarga')->nullable();
+            $table->enum('status', ['Janda', 'Duda', 'Berkeluarga'])->after('keluarga')->nullable();
         });
     }
 

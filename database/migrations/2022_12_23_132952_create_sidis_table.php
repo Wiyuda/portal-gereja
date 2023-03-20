@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('sidis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('sector_id')->constrained('sectors')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->foreignId('family_id')->constrained('families')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

@@ -19,7 +19,7 @@ class FamilyController extends Controller
     {
         $sectors = Sector::all();
         $data = Family::latest('no_registrasi')->first();
-        $statuses = ['Janda', 'Duda'];
+        $statuses = ['Berkeluarga', 'Janda', 'Duda'];
         if(!$data) {
             $noRegister = "G0001";
         } else {
@@ -35,7 +35,7 @@ class FamilyController extends Controller
             'no_registrasi' => 'required',
             'sector_id' => 'required|numeric',
             'keluarga' => 'required|max:50',
-            'status' => 'nullable',
+            'status' => 'required|string|in:Berkeluarga,Janda,Duda',
         ]);
 
         $family = Family::create($validator);
@@ -47,7 +47,7 @@ class FamilyController extends Controller
     {
         $sectors = Sector::all();
         $family = Family::find($id);
-        $statuses = ['Janda', 'Duda'];
+        $statuses = ['Berkeluarga', 'Janda', 'Duda'];
         
         return view('dashboard.family.edit', compact('sectors', 'family', 'statuses'));
     }
@@ -58,7 +58,7 @@ class FamilyController extends Controller
             'no_registrasi' => 'required',
             'sector_id' => 'required|numeric',
             'keluarga' => 'required|max:50',
-            'status' => 'nullable', 
+            'status' => 'required|string|in:Berkeluarga,Janda,Duda', 
         ]);
 
         $family = Family::find($id)->update($validator);

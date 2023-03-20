@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Baptism;
 use App\Models\Family;
 use App\Models\FamilyMember;
+use App\Models\Sector;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,19 +26,20 @@ class BaptismController extends Controller
     public function create()
     {
         $status = 'Baptis';
-        $families = Family::all();
-        return view('dashboard.baptism.create', compact('status', 'families'));
+        $sectors = Sector::all();
+        return view('dashboard.baptism.create', compact('status', 'sectors'));
     }
 
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required',
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric',
             'baptis' => 'required',
             'tanggal' => 'date|required',
             'gereja' => 'required',
-            'keterangan' => 'required'
+            'keterangan' => 'nullable'
         ]);
 
         $baptis = new Baptism($validate);
@@ -56,17 +58,19 @@ class BaptismController extends Controller
     {
         $baptism = Baptism::find($id);
         $status = 'Baptis';
+        $sectors = Sector::all();
         $families = Family::all();
         $family_members = FamilyMember::where('family_id', $baptism->family_id)->get();
-        return view('dashboard.baptism.edit', compact('baptism', 'status', 'families', 'family_members'));        
+        return view('dashboard.baptism.edit', compact('baptism', 'status', 'families', 'family_members', 'sectors'));        
     }
 
     public function update(Request $request, $id)
     {
 
         $validate = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required',
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric',
             'baptis' => 'required',
             'tanggal' => 'date|required',
             'gereja' => 'required',
