@@ -26,6 +26,7 @@
                   <th>No.Registrasi</th>
                   <th>Sektor</th>
                   <th>Keluarga</th>
+                  <th>Status</th>
                   <th width="11%">Aksi</th>
                 </tr>
               </thead>
@@ -35,6 +36,7 @@
                   <th>No.Registrasi</th>
                   <th>Sektor</th>
                   <th>Keluarga</th>
+                  <th>Status</th>
                   <th width="11%">Aksi</th>
                 </tr>
               </tfoot>
@@ -48,6 +50,7 @@
                     <td>{{ $family->no_registrasi }}</td>
                     <td>{{$family->sectors->sektor }} / {{$family->sectors->nama }}</td>
                     <td>{{ $family->keluarga }}</td>
+                    <td>{{ $family->status }}</td>
                     <td width="11%">
                       <a href="{{ route('keluarga.edit', $family->id) }}" class="btn btn-success">
                         <i class="fas fa-pen"></i>

@@ -19,21 +19,23 @@ class FamilyController extends Controller
     {
         $sectors = Sector::all();
         $data = Family::latest('no_registrasi')->first();
+        $statuses = ['Janda', 'Duda'];
         if(!$data) {
-            $noRegister = "G0001";
+            $noRegister = "G00001";
         } else {
-            $oldRegister = intval(substr($data->no_registrasi, 4, 4));
-            $noRegister = 'G' . sprintf("%04s", ++$oldRegister);
+            $oldRegister = intval(substr($data->no_registrasi, 5, 5));
+            $noRegister = 'G' . sprintf("%05s", ++$oldRegister);
         }
-        return view('dashboard.family.create', compact('sectors', 'noRegister'));
+        return view('dashboard.family.create', compact('sectors', 'noRegister', 'statuses'));
     }
 
     public function store(Request $request)
     {
         $validator = $request->validate([
             'no_registrasi' => 'required',
-            'sector_id' => 'required',
+            'sector_id' => 'required|numeric',
             'keluarga' => 'required|max:50',
+            'status' => 'nullable',
         ]);
 
         $family = Family::create($validator);
@@ -45,16 +47,18 @@ class FamilyController extends Controller
     {
         $sectors = Sector::all();
         $family = Family::find($id);
+        $statuses = ['Janda', 'Duda'];
         
-        return view('dashboard.family.edit', compact('sectors', 'family'));
+        return view('dashboard.family.edit', compact('sectors', 'family', 'statuses'));
     }
 
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
             'no_registrasi' => 'required',
-            'sector_id' => 'required',
+            'sector_id' => 'required|numeric',
             'keluarga' => 'required|max:50',
+            'status' => 'nullable', 
         ]);
 
         $family = Family::find($id)->update($validator);
