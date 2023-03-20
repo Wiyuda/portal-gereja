@@ -21,10 +21,10 @@ class FamilyController extends Controller
         $data = Family::latest('no_registrasi')->first();
         $statuses = ['Janda', 'Duda'];
         if(!$data) {
-            $noRegister = "G00001";
+            $noRegister = "G0001";
         } else {
-            $oldRegister = intval(substr($data->no_registrasi, 5, 5));
-            $noRegister = 'G' . sprintf("%05s", ++$oldRegister);
+            $oldRegister = intval(substr($data->no_registrasi, 4, 4));
+            $noRegister = 'G' . sprintf("%04s", ++$oldRegister);
         }
         return view('dashboard.family.create', compact('sectors', 'noRegister', 'statuses'));
     }
