@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Family;
 use App\Models\Monding;
 use App\Models\FamilyMember;
+use App\Models\Sector;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,16 +27,17 @@ class MondingController extends Controller
 
     public function create()
     {
-        $families = Family::all();
         $monding = 'Monding';
-        return view('dashboard.monding.create', compact('families', 'monding'));
+        $sectors = Sector::all();
+        return view('dashboard.monding.create', compact('sectors', 'monding'));
     }
 
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required|integer',
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric',
             'monding' => 'required',
             'tanggal' => 'required|date',
             'keterangan' => 'required'

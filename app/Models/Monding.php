@@ -10,7 +10,7 @@ class Monding extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_id', 'family_member_id', 'monding', 'tanggal', 'keterangan', 'tahun'];
+    protected $fillable = ['family_id', 'family_member_id', 'monding', 'tanggal', 'keterangan', 'tahun', 'sector_id'];
 
     public function families()
     {

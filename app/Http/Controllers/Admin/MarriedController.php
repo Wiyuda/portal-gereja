@@ -26,15 +26,16 @@ class MarriedController extends Controller
     public function create()
     {
         $status = 'Kawin';
-        $families = Family::all();
-        return view('dashboard.married.create', compact('families', 'status'));
+        $sectors = Sector::all();
+        return view('dashboard.married.create', compact('status', 'sectors'));
     }
 
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required', 
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric', 
             'kawin' => 'required',
             'nama_calon' => 'required',
             'asal_gereja_calon' => 'required',
@@ -60,8 +61,9 @@ class MarriedController extends Controller
         $married = Married::find($id);
         $status = 'Kawin';
         $families = Family::all();
+        $sectors = Sector::all();
         $family_members = FamilyMember::where('family_id', $married->family_id)->get();
-        return view('dashboard.married.edit', compact('married', 'families', 'status', 'family_members'));
+        return view('dashboard.married.edit', compact('married', 'families', 'status', 'family_members', 'sectors'));
     }
 
     public function update(Request $request, $id)

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->foreignId('family_member_id')->constrained('family_members')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreignId('sector_id')->constrained('sectors')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('kawin', 10);
             $table->string('nama_calon', 100);
             $table->string('asal_gereja_calon', 100);

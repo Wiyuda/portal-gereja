@@ -18,6 +18,9 @@ return new class extends Migration
             $table->foreignId('family_id')->constrained('families')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreignId('sector_id')->constrained('sectors')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('nama', 100);
             $table->date('tgl_lahir');
             $table->string('tempat_lahir');

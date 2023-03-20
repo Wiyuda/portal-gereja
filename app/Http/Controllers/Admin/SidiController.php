@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Sector;
 use App\Models\Sidi;
 use App\Models\Family;
 use App\Models\FamilyMember;
@@ -24,16 +25,17 @@ class SidiController extends Controller
 
     public function create()
     {
-        $families = Family::all();
         $sidi = 'Sidi';
-        return view('dashboard.sidi.create', compact('families', 'sidi'));
+        $sectors = Sector::all();
+        return view('dashboard.sidi.create', compact('sectors', 'sidi'));
     }
 
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required|integer',
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric',
             'sidi' => 'required',
             'tanggal' => 'date|required',
             'gereja' => 'required',
@@ -58,14 +60,16 @@ class SidiController extends Controller
         $families = Family::all();
         $family_members = FamilyMember::where('family_id', $sidi->family_id)->get();
         $sidiStatus = 'Sidi';
-        return view('dashboard.sidi.edit', compact('sidi', 'families', 'family_members', 'sidiStatus'));
+        $sectors = Sector::all();
+        return view('dashboard.sidi.edit', compact('sidi', 'families', 'family_members', 'sidiStatus', 'sectors'));
     }
 
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required|integer',
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric',
             'sidi' => 'required',
             'tanggal' => 'date|required',
             'gereja' => 'required',

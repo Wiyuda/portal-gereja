@@ -13,17 +13,28 @@
             @csrf
             <div class="form-row">
               <div class="form-group col-md-6">
+                <label for="sektor_id">Sektor</label>
+                <select name="sector_id" id="sector_id" class="form-control @error('sector_id') is-invalid @enderror">
+                  <option>--Pilih Sektor Gereja--</option>
+                  @foreach ($sectors as $sector)
+                    <option value="{{ $sector->id }}">{{ $sector->nama }}</option>
+                  @endforeach
+                </select>
+                @error('sector_id')
+                  <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
                 <label for="family_id">Keluarga</label>
                 <select name="family_id" id="family_id" class="form-control @error('family_id') is-invalid @enderror">
                   <option>--Pilih Keluarga--</option>
-                  @foreach ($families as $family)
-                    <option value="{{ $family->id }}">{{ $family->keluarga }}</option>
-                  @endforeach
                 </select>
                 @error('family_id')
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="family_member_id">Anggota Keluarga</label>
                 <select name="family_member_id" id="family_member_id" class="form-control @error('family_member_id') is-invalid @enderror">
@@ -33,8 +44,6 @@
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
-            </div>
-            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="sidi">Sidi</label>
                 <input type="text" name="sidi" id="sidi" value="{{ $sidi }}" class="form-control @error('sidi') is-invalid @enderror" readonly>
@@ -42,6 +51,8 @@
                     <div class="alert alert-danger mt-2 mb-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="tanggal">Tanggal</label>
                 <input type="date" name="tanggal" id="tanggal" class="form-control @error('tanggal') is-invalid @enderror">
@@ -49,9 +60,7 @@
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror
               </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="gereja">Gereja</label>
                 <input type="text" name="gereja" id="gereja" class="form-control @error('gereja') is-invalid @enderror" placeholder="Input gereja sidi">
                 @error('gereja')
@@ -79,7 +88,22 @@
   </div>
 
   @push('scripts')
+  {{-- Axios --}}
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
+    $(function() {
+      $('#sector_id').on('change', function() {
+        axios.post('{{ route('family') }}', {id: $(this).val()})
+        .then(function(response) {
+          $('#family_id').empty();
+          $('#family_id').append(new Option('--Pilih Keluarga--'));
+          $.each(response.data, function(id, keluarga) {
+              $('#family_id').append(new Option(keluarga, id));
+          });
+        });
+      });
+    });
+
     $(document).ready(function() {
     $('#family_id').on('change', function() {
        var categoryID = $(this).val();

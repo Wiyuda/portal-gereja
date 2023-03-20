@@ -13,6 +13,10 @@
             <table class="table table-bordered table-hover">
               <tbody>
                 <tr>
+                  <th>Sektor</th>
+                  <td>{{ $family->families->sectors->sektor }} / {{ $family->families->sectors->nama }}</td>
+                </tr>
+                <tr>
                   <th>Keluarga</th>
                   <td>{{ $family->families->keluarga }}</td>
                 </tr>
