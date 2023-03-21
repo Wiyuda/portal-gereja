@@ -132,11 +132,18 @@
             $('#family_id').on('change', function() {
                 axios.post('{{ route('family_member') }}', {id: $(this).val()})
                 .then(function(response) {
-                    $('#family_member_id').empty();
-                    $('#family_member_id').append(new Option('--Pilih Anggota Keluarga--'));
+                  $('#family_member_id').empty();
+                  $('#family_member_id').append(new Option('--Pilih Anggota Keluarga--'));
+                  if(response.data.length == 0) {
                     $.each(response.data, function(id, nama) {
-                        $('#family_member_id').append(new Option(nama, id));
+                      $('#family_member_id').append(new Option(nama, id));
                     });
+                  } else {
+                    $('#family_member_id').append(new Option('All', 'All'));
+                    $.each(response.data, function(id, nama) {
+                      $('#family_member_id').append(new Option(nama, id));
+                    });
+                  }
                 });
             });
         });
