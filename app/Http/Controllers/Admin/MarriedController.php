@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Family;
 use App\Models\FamilyMember;
+use App\Models\goOut;
 use App\Models\Sector;
 use App\Models\Married;
+use App\Models\Shift;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +21,17 @@ class MarriedController extends Controller
 
     public function getFamilyMember($id)
     {
-        $familyMember = FamilyMember::where('family_id', $id)->get();
+        $shifts = Shift::all();
+        $shiftId = [];
+        foreach($shifts as $shift) {
+            array_push($shiftId, $shift->family_member_id);
+        }
+        $outs = goOut::all();
+        $outId = [];
+        foreach($outs as $out) {
+            array_push($outId, $out->family_member_id);
+        }
+        $familyMember = FamilyMember::with('families')->where('family_id', $id)->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->get();
         return response()->json($familyMember);
     }
 
