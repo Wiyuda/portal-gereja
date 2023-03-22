@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\ActivityController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
 use App\Http\Controllers\Admin\AxiosController;
 use App\Http\Controllers\Admin\GoOutController;
 use App\Http\Controllers\Admin\ShiftController;
@@ -45,6 +46,7 @@ Route::get('/berita', [ReadNewsController::class, 'index'])->name('news');
 Route::get('/berita/baca/{id}', [ReadNewsController::class, 'show'])->name('read.show');
 
 Route::get('/developer', [ProgrammerController::class, 'index'])->name('developer');
+Route::get('/kegiatan', [ActivityController::class, 'index'])->name('activity');
 
 Route::prefix('/admin')->group(function () {
   Route::middleware('auth')->group(function () {
@@ -102,7 +104,7 @@ Route::prefix('/admin')->group(function () {
 
     Route::resource('/keluar', GoOutController::class);
 
-    Route::resource('/kegiatan', ActivityController::class);
+    Route::resource('/kegiatan', AdminActivityController::class);
 
     Route::get('/print', [PrintController::class, 'index'])->name('print');
     Route::post('/print/data', [PrintController::class, 'print'])->name('print-data');
