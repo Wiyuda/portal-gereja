@@ -19,7 +19,7 @@
             <a class="nav-link fw-bold me-4" href="{{ route('news') }}">Berita</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle fw-bold me-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Buku
             </a>
             <ul class="dropdown-menu">
@@ -28,6 +28,9 @@
               <li><a class="dropdown-item" target="_blank" href="https://alkitabtoba.wordpress.com/">Alkitab Bahasa Batak</a></li>
               <li><a class="dropdown-item" target="_blank" href="https://www.sabda.org/alkitab/">Alkitab Bahasa Indonesia</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold me-4" href="{{ route('activity') }}">Kegiatan</a>
           </li>
         </ul>
         <div class="d-flex">
@@ -80,36 +83,6 @@
                     </div>
                   </div>
                   @endforeach
-                  {{-- <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
-                    <div class="card shadow">
-                      <div class="card-body p-0">
-                        <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
-                        <a href="#">
-                          <div class="news-title text-center">
-                            <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
-                          </div>
-                        </a>
-                          <div class="news-time">
-                            <p>By <span>Admin</span> 07-02-2023, 18.00</p>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
-                    <div class="card shadow">
-                      <div class="card-body p-0">
-                        <img src="{{ url('assets/images/gereja.jpg') }}" alt="Thumbnail" class="rounded card-img-top">
-                        <a href="#">
-                          <div class="news-title text-center">
-                            <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
-                          </div>
-                        </a>
-                        <div class="news-time">
-                          <p>By <span>Admin</span> 07-02-2023, 18.00</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div> --}}
                 </div>
               </div>
             </div>

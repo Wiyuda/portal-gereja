@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'Tetang Developer Website')
+@section('title', 'Daftar Kegiatan Harian Gereja HKBP Bethel Resort')
 @section('content')
   {{-- Navbar --}}
   <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
@@ -49,66 +49,47 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Developer</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Kegiatan</a></li>
           </ol>
         </nav>
       </div>
     </div>
     {{-- End Breadcrumb --}}
 
-    {{-- Abbout --}}
-    <div class="developer">
-      <div class="row">
-        <div class="col-12">
-          <div class="card card-body">
-            <div class="title text-center">
-              <h3>Tentang Developer Website</h3>
-            </div>
-            <hr>
-            <div class="description mt-3">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <div class="profile d-flex justify-content-center">
-                    <img src="{{ url('assets/images/profil.jpg') }}" alt="Profil Developer" class="rounded-cricle">
-                  </div>
-                  <div class="abbout mt-3">
-                    <table class="table table-hover">
-                      <tbody>
+    {{-- News --}}
+    <div class="news">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="fw-bold">Kegiatan HARIAN</h3>
+                <hr>
+                <div class="row">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                      <thead>
                         <tr>
+                          <th>No</th>
                           <th>Nama</th>
-                          <td>Wiyuda Pratama</td>
+                          <th>Tanggal</th>
+                          <th>Lokasi</th>
+                          <th>Keterangan</th>
                         </tr>
-                        <tr>
-                          <th>Alamat</th>
-                          <td>Jln.Sisingamangaraja Gg. Sepakat</td>
-                        </tr>
-                        <tr>
-                          <th>Pekerjaan</th>
-                          <td>Fullstact Web Developer</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="profile d-flex justify-content-center">
-                    <img src="{{ url('assets/images/profil.jpg') }}" alt="Profil Developer" class="rounded-cricle">
-                  </div>
-                  <div class="abbout mt-3">
-                    <table class="table table-hover">
+                      </thead>
                       <tbody>
+                        @php
+                            $no = 1;
+                        @endphp
+                        @foreach ($activities as $activity)
                         <tr>
-                          <th>Nama</th>
-                          <td>Wiyuda Pratama</td>
+                          <th>{{ $no++ }}</th>
+                          <td>{{ $activity->nama }}</td>
+                          <td>{{ $activity->tgl }}</td>
+                          <td>{{ $activity->lokasi }}</td>
+                          <td>{{ $activity->keterangan }}</td>
                         </tr>
-                        <tr>
-                          <th>Alamat</th>
-                          <td>Jln.Sisingamangaraja Gg. Sepakat</td>
-                        </tr>
-                        <tr>
-                          <th>Pekerjaan</th>
-                          <td>Fullstact Web Developer</td>
-                        </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
@@ -119,7 +100,6 @@
         </div>
       </div>
     </div>
-    {{-- End Abbout --}}
-
+    {{-- End News --}}
   </div>
 @endsection
