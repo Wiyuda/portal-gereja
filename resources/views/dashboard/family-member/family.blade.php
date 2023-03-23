@@ -28,6 +28,7 @@
                   <th>Tanggal Lahir</th>
                   <th>Tempat Lahir</th>
                   <th>Jenis Kelamin</th>
+                  <th>Status</th>
                   <th width="11%">Aksi</th>
                 </tr>
               </thead>
@@ -39,6 +40,7 @@
                   <th>Tanggal Lahir</th>
                   <th>Tempat Lahir</th>
                   <th>Jenis Kelamin</th>
+                  <th>Status</th>
                   <th width="16%">Aksi</th>
                 </tr>
               </tfoot>
@@ -54,6 +56,7 @@
                     <td>{{ $member->tgl_lahir }}</td>
                     <td>{{ $member->tempat_lahir }}</td>
                     <td>{{ $member->jenis_kelamin }}</td>
+                    <td>{{ $member->status_keluarga }}</td>
                     <td width="16%">
                       <a href="{{ route('member.show', $member->id) }}" class="btn btn-info">
                         <i class="fas fa-info-circle"></i>
