@@ -11,6 +11,8 @@ use App\Models\Monding;
 use App\Models\FamilyMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\goOut;
+use App\Models\Shift;
 
 class PrintController extends Controller
 {
@@ -87,6 +89,28 @@ class PrintController extends Controller
                 }))->get();
             }
             $pdf = PDF::loadView('dashboard.print.baptis', compact('datas'))->setPaper('a4', 'landscape');
+            return $pdf->stream();
+        } elseif($request->data == 'Pindah') {
+            if($request->sector == 'All') {
+                $datas = Shift::whereBetween('created_at', [$start, $end])->get();
+            } else {
+                $datas = Shift::whereBetween('created_at', [$start, $end])->whereHas('families', (function($query) {
+                    global $request;
+                    return $query->where('sector_id', $request->sector);
+                }))->get();
+            }
+            $pdf = PDF::loadView('dashboard.print.shift', compact('datas'))->setPaper('a4', 'landscape');
+            return $pdf->stream();
+        } elseif($request->data = 'Keluar') {
+            if($request->sector == 'All') {
+                $datas = goOut::whereBetween('created_at', [$start, $end])->get();
+            } else {
+                $datas = goOut::whereBetween('created_at', [$start, $end])->whereHas('families', (function($query) {
+                    global $request;
+                    return $query->where('sector_id', $request->sector);
+                }))->get();
+            }
+            $pdf = PDF::loadView('dashboard.print.out', compact('datas'))->setPaper('a4', 'landscape');
             return $pdf->stream();
         }
     }

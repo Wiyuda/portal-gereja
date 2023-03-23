@@ -20,6 +20,8 @@
                   <option value="Sidi">Sidi</option>
                   <option value="Monding">Monding</option>
                   <option value="Baptis">Baptis</option>
+                  <option value="Pindah">Pindah</option>
+                  <option value="Keluar">Keluar</option>
                 </select>
                 @error('data')
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
