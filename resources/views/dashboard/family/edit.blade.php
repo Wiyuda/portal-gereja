@@ -40,7 +40,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="keluarga">Keluarga</label>
-                <input type="text" name="keluarga" id="keluarga" class="form-control @error('keluarga') is-invalid @enderror" placeholder="Input nama keluarga"value={{ $family->keluarga }}>
+                <input type="text" name="keluarga" id="keluarga" class="form-control @error('keluarga') is-invalid @enderror" placeholder="Input nama keluarga" value="{{ $family->keluarga }}">
                 @error('keluarga')
                   <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
                 @enderror

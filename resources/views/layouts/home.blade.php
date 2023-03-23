@@ -22,13 +22,23 @@
       <div class="card-body">
         <div class="container">
           <div class="row">
-            <div class="col-md-3 d-md-block d-none">
+            <div class="col-md-2 d-md-block d-none">
               <img src="{{ url('./assets/images/logo.png') }}" alt="Logo Gereja">
             </div>
-            <div class="col-md-9 col-sm-12 col-12 text-center">
+            <div class="col-md-10 col-sm-12 col-12 text-center">
               <h4 class="fw-bold">HURIA KRISTEN BATAK PROTESTAN (HKBP)</h4>
               <h5>HKBP BETHEL RESORT PERSIAPAN BETHEL RESORT PADANG BULAN DISTRIK X MEDAN ACEH</h5>
-              <p>Jl. Besar Tj, Selamat No. 168, Deli Serdang</p>
+              <p>
+                Jl. Besar Tj, Selamat No. 168, Deli Serdang
+                <br>
+                HP/WA. Pimpinan Jemaat: 0852.6167.3441 (Pdt. Dame Parlindungan Purba, S.Th)
+                <br>
+                St. M. Sitompul (Parartaon: 082366569865), St. R. Sihombing (Anggota: 081370073801)
+                <br>
+                St.JRS.Pasaribu, M.Kom (Sekretaris: 081264284781),St. R. Br. Rambe, SE (Bendahara: 081377184316)
+                <br>
+                St. JB. Malau (Koinonia: 082368252952) St. R. Silitonga (Marturia:081376303983), St. M br. Butarbutar (Diakonia: 085372583465)
+              </p>
             </div>
           </div>
         </div>

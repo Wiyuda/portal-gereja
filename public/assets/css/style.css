@@ -7,14 +7,15 @@ body {
 }
 
 .header img {
-  max-width: 70px;
+  max-width: 120px;
+  height: 120px;
 }
 
 .header .card {
   background-color: #f2f2f2;
 }
 
-.header .card h4, h5, p {
+.header .card h4, h5 {
   line-height: 15px;
 }
 
@@ -27,7 +28,8 @@ body {
 }
 
 .header .card p {
-  margin-bottom: 0px;
+  font-size: 14px;
+  line-height: 19px;
 }
 
 .banner .carousel-inner img {
@@ -201,12 +203,13 @@ i.fa-arrow-up {
     display: none;
   }
 
-  .header .card h4, h5, p {
-    line-height: 8px;
+  .header .card h4 {
+    line-height: 5px;
   }
 
   .header .card h4 {
     font-size: 14px;
+    line-height: 10px;
   }
 
   .header .card h5 {
@@ -215,7 +218,7 @@ i.fa-arrow-up {
 
   .header .card p {
     font-size: 10px;
-    margin-bottom: 0px;
+    line-height: 13px;
   }
 
   .navbar {
@@ -307,6 +310,10 @@ i.fa-arrow-up {
   .developer .title h3 {
     font-size: 16px;
   }
+
+  .developer .title h4 {
+    font-size: 14px !important;
+  }
   
   .developer .description .profile img {
     width: 90px;
@@ -314,7 +321,7 @@ i.fa-arrow-up {
   }
 
   .developer .description .abbout table tr th, td {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   footer {
@@ -353,7 +360,7 @@ i.fa-arrow-up {
 /* Tablet Mini */
 @media (min-width: 576px) and (max-width: 768px) {
   .header img {
-    max-width: 60px;
+    max-width: 100px;
   }
 
   .header .card h4, h5, p {
@@ -361,16 +368,16 @@ i.fa-arrow-up {
   }
 
   .header .card h4 {
-    font-size: 18px;
-  }
-
-  .header .card h5 {
     font-size: 16px;
   }
 
+  .header .card h5 {
+    font-size: 15px;
+  }
+
   .header .card p {
-    font-size: 14px;
-    margin-bottom: 0px;
+    font-size: 12px;
+    line-height: 15px;
   }
 
   .navbar {
@@ -445,6 +452,10 @@ i.fa-arrow-up {
   .developer .title h3 {
     font-size: 20px;
   }
+
+  .developer .title h4 {
+    font-size: 16px !important;
+  }
   
   .developer .description .profile img {
     width: 100px;
@@ -452,7 +463,7 @@ i.fa-arrow-up {
   }
 
   .developer .description .abbout table tr th, td {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   footer {

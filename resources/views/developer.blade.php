@@ -63,54 +63,113 @@
           <div class="card card-body">
             <div class="title text-center">
               <h3>Tentang Developer Website</h3>
+              <hr>
+              <h4 class="fs-6">Aplikasi Pendataan Jemaat HKBP Bethel Tanjung Selamat Merupakan Bentuk Pengabdian Kepada Masyarakat (PKM) Dosen Universitas Budi Darma Yang di Wujudkan Dalam Bentuk Produk Yang di Gunakan Oleh Masyarakat.</h4>
             </div>
-            <hr>
             <div class="description mt-3">
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="profile d-flex justify-content-center">
-                    <img src="{{ url('assets/images/profil.jpg') }}" alt="Profil Developer" class="rounded-cricle">
+                    <img src="{{ url('assets/images/yuda.jpg') }}" alt="Profil Developer" class="rounded-cricle">
                   </div>
                   <div class="abbout mt-3">
-                    <table class="table table-hover">
-                      <tbody>
-                        <tr>
-                          <th>Nama</th>
-                          <td>Wiyuda Pratama</td>
-                        </tr>
-                        <tr>
-                          <th>Alamat</th>
-                          <td>Jln.Sisingamangaraja Gg. Sepakat</td>
-                        </tr>
-                        <tr>
-                          <th>Pekerjaan</th>
-                          <td>Fullstact Web Developer</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <th>Nama</th>
+                            <td>Wiyuda Pratama Mahardika, S.Kom</td>
+                          </tr>
+                          <tr>
+                            <th>Jabatan</th>
+                            <td>Programmer</td>
+                          </tr>
+                          <tr>
+                            <th>Alumni</th>
+                            <td>Teknik Informatika Univ. Budi Darma</td>
+                          </tr>
+                          <tr>
+                            <th>Email/WA</th>
+                            <td>wiyudapratama310@gmail.com/082284578426</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="profile d-flex justify-content-center">
-                    <img src="{{ url('assets/images/profil.jpg') }}" alt="Profil Developer" class="rounded-cricle">
+                    <img src="{{ url('assets/images/efori.jpeg') }}" alt="Profil Developer" class="rounded-cricle">
                   </div>
                   <div class="abbout mt-3">
-                    <table class="table table-hover">
-                      <tbody>
-                        <tr>
-                          <th>Nama</th>
-                          <td>Wiyuda Pratama</td>
-                        </tr>
-                        <tr>
-                          <th>Alamat</th>
-                          <td>Jln.Sisingamangaraja Gg. Sepakat</td>
-                        </tr>
-                        <tr>
-                          <th>Pekerjaan</th>
-                          <td>Fullstact Web Developer</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <th>Nama</th>
+                            <td>Efori Bu'ulolo, M.Kom</td>
+                          </tr>
+                          <tr>
+                            <th>Jabatan</th>
+                            <td>Analis</td>
+                          </tr>
+                          <tr>
+                            <th>Dosen</th>
+                            <td>Univ. Budi Darma</td>
+                          </tr>
+                          <tr>
+                            <th>Email/WA</th>
+                            <td>buuloloefori21@gmail.com/081397959704</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="abbout mt-3">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <th>Nama</th>
+                            <td>Rian Syahputra, M.Kom</td>
+                          </tr>
+                          <tr>
+                            <th>Jabatan</th>
+                            <td>Fasilitator</td>
+                          </tr>
+                          <tr>
+                            <th>Dosen</th>
+                            <td>Univ. Budi Darma</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="abbout mt-3">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <th>Nama</th>
+                            <td>St. J.R.S Pasaribu,M.Kom</td>
+                          </tr>
+                          <tr>
+                            <th>Jabatan</th>
+                            <td>Narahubung</td>
+                          </tr>
+                          <tr>
+                            <th>Sintua</th>
+                            <td>Sintuan</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
