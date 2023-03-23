@@ -71,14 +71,16 @@ class MondingController extends Controller
         $mondingStatus = 'Monding';
         $families = Family::all();
         $family_members = FamilyMember::where('family_id', $monding->family_id)->get();
-        return view('dashboard.monding.edit', compact('monding', 'mondingStatus', 'families',  'family_members'));
+        $sectors = Sector::all();
+        return view('dashboard.monding.edit', compact('monding', 'mondingStatus', 'families',  'family_members', 'sectors'));
     }
 
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
-            'family_id' => 'required',
-            'family_member_id' => 'required|integer',
+            'sector_id' => 'required|numeric',
+            'family_id' => 'required|numeric',
+            'family_member_id' => 'required|numeric',
             'monding' => 'required',
             'tanggal' => 'required|date',
             'keterangan' => 'required'
