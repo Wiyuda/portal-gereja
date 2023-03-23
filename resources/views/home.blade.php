@@ -125,7 +125,7 @@
               <hr>
               <div class="row g-0">
                 <div class="col-md-5 col-sm-12 mt-2">
-                  <img src="{{ url('storage/profile/', $profile->image) }}" class="img-fluid rounded-start" alt="Gereja">
+                  <img src="{{ url('storage/profile/', $profile->image) }}" class="img-fluid rounded-start w-100" alt="Gereja">
                 </div>
                 <div class="col-md-7 col-sm-12 mt-2">
                   <div class="card-body pt-1">
