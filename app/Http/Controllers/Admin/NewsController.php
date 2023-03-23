@@ -29,7 +29,7 @@ class NewsController extends Controller
         ]);
 
         $extension = $request->file('warta')->getClientOriginalExtension();
-        $warta = 'warta'. '-' .date('d-m-Y'). '.' . $extension;
+        $warta = 'warta'. '-' . rand() . '.' . $extension;
         $path = $request->file('warta')->storeAs('warta', $warta, 'public');
 
         News::create([
@@ -50,16 +50,21 @@ class NewsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $news = News::find($id);
         $validate = $request->validate([
             'tanggal' => 'date|required',
             'minggu' => 'required|max:50',
-            'warta' => 'file|max:2048|mimes:pdf|required',
+            'warta' => 'file|max:2048|mimes:pdf|nullable',
             'keterangan' => 'required'
         ]);
 
-        $extension = $request->file('warta')->getClientOriginalExtension();
-        $warta = 'warta'. '-' .date('d-m-Y'). '.' . $extension;
-        $path = $request->file('warta')->storeAs('warta', $warta, 'public');
+        if(is_null($request->file('warte'))) {
+            $warta = $news->warta;
+        } else {
+            $extension = $request->file('warta')->getClientOriginalExtension();
+            $warta = 'warta'. '-' . rand() . '.' . $extension;
+            $path = $request->file('warta')->storeAs('warta', $warta, 'public');
+        }
 
         News::find($id)->update([
             'tanggal' => $request->tanggal,

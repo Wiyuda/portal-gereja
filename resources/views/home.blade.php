@@ -348,7 +348,6 @@
                     <tr>
                       <th>No</th>
                       <th>Nama Keluarga</th>
-                      <th>Status Keluarga</th>
                       <th>Sektor</th>
                       <th>Alamat</th>
                     </tr>
@@ -360,9 +359,8 @@
                     @foreach ($families as $family)
                     <tr>
                       <th>{{ $no++ }}</th>
-                      <td>{{ $family->families->keluarga }}</td>
-                      <td>{{ $family->status_keluarga }}</td>
-                      <td>{{ $family->families->sectors->sektor }} / {{ $family->families->sectors->nama }}</td>
+                      <td><a href="{{ route('getJemaat', $family->id) }}" target="_blank">{{ $family->keluarga }}</a></td>
+                      <td>{{ $family->sectors->sektor }} / {{ $family->sectors->nama }}</td>
                       <td>{{ $family->alamat }}</td>
                     </tr>
                     @endforeach
@@ -378,31 +376,31 @@
   {{-- Jemaat --}}
 
   @push('scripts')
-      <script>
-        const ctx = document.getElementById('myChart');
+    <script>
+      const ctx = document.getElementById('myChart');
 
-        Chart.defaults.font.size = 15;
-        new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            labels: [
-              'Jemaat',
-              'Keluarga',
-              'Sintua'
+      Chart.defaults.font.size = 15;
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: [
+            'Jemaat',
+            'Keluarga',
+            'Sintua'
+          ],
+          datasets: [{
+            label: 'Jumlah Statistik',
+            data: [{{ $family_member }}, {{ $family }}, {{ $sintua }}],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)'
             ],
-            datasets: [{
-              label: 'Jumlah Statistik',
-              data: [{{ $family_member }}, {{ $family }}, {{ $sintua }}],
-              backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-              ],
-              hoverOffset: 4
-            }]
-          },
-        });
-      </script>
+            hoverOffset: 4
+          }]
+        },
+      });
+    </script>
   @endpush
 
 @endsection

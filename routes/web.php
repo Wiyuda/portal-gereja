@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FamilyMemberController;
 use App\Http\Controllers\Admin\PrintController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\GetJemaatController;
 use App\Http\Controllers\ReadNewsController;
 
 /*
@@ -47,6 +48,7 @@ Route::get('/berita/baca/{id}', [ReadNewsController::class, 'show'])->name('read
 
 Route::get('/developer', [ProgrammerController::class, 'index'])->name('developer');
 Route::get('/kegiatan', [ActivityController::class, 'index'])->name('activity');
+Route::get('/jemaat/{id}', [GetJemaatController::class, 'show'])->name('getJemaat');
 
 Route::prefix('/admin')->group(function () {
   Route::middleware('auth')->group(function () {

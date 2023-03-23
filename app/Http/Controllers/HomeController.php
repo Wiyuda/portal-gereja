@@ -33,7 +33,7 @@ class HomeController extends Controller
         }
         $family_member = FamilyMember::with('families')->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->orderBy('id', 'desc')->get()->count();
         $family = Family::all()->count();
-        $families = FamilyMember::with('families')->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->orderBy('id', 'desc')->get();
+        $families = Family::orderBy('id', 'desc')->get();
         $profile = Profile::first();
         $sintuas = explode(',',$profile->sintua);
         $news = News::all();
