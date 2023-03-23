@@ -10,7 +10,7 @@ class FamilyMember extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['family_id', 'nama', 'tgl_lahir', 'tempat_lahir', 'jenis_kelamin', 'no_hp', 'alamat', 'status_keluarga', 'status_anak', 'pendidikan', 'status', 'tahun', 'sector_id'];
+    protected $fillable = ['family_id', 'nama', 'tgl_lahir', 'tempat_lahir', 'jenis_kelamin', 'no_hp', 'status_keluarga', 'status_anak', 'pendidikan', 'status', 'tahun', 'sector_id'];
 
     public function families()
     {

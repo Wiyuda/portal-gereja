@@ -46,6 +46,15 @@
                 @enderror
               </div>
               <div class="form-group col-md-6">
+                <label for="alamat">Alamat</label>
+                <textarea name="alamat" id="alamat" rows="3" class="form-control">{{ $family->alamat }}</textarea>
+                @error('alamat')
+                  <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
                 <label for="status">Status</label>
                 <select name="status" id="status" class="form-control">
                   <option>--Pilih Status--</option>

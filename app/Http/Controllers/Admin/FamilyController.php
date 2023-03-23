@@ -36,6 +36,7 @@ class FamilyController extends Controller
             'sector_id' => 'required|numeric',
             'keluarga' => 'required|max:50',
             'status' => 'required|string|in:Berkeluarga,Janda,Duda',
+            'alamat' => 'required|string',
         ]);
 
         $family = Family::create($validator);
@@ -59,6 +60,7 @@ class FamilyController extends Controller
             'sector_id' => 'required|numeric',
             'keluarga' => 'required|max:50',
             'status' => 'required|string|in:Berkeluarga,Janda,Duda', 
+            'alamat' => 'required|string',
         ]);
 
         $family = Family::find($id)->update($validator);

@@ -41,10 +41,6 @@
                   <td>{{ $family->no_hp }}</td>
                 </tr>
                 <tr>
-                  <th>Alamat</th>
-                  <td>{{ $family->alamat }}</td>
-                </tr>
-                <tr>
                   <th>Status Keluarga</th>
                   <td>{{ $family->status_keluarga }}</td>
                 </tr>

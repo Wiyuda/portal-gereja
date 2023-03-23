@@ -10,7 +10,7 @@ class Family extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['no_registrasi', 'sector_id', 'keluarga', 'status'];
+    protected $fillable = ['no_registrasi', 'sector_id', 'keluarga', 'alamat', 'status'];
 
     public function sectors()
     {

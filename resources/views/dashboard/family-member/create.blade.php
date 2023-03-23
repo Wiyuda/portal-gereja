@@ -80,15 +80,6 @@
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="alamat">Alamat</label>
-                <textarea name="alamat" id="alamat" rows="3" class="form-control"></textarea>
-                @error('alamat')
-                  <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
-                @enderror
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
                 <label for="status_keluarga">Status Keluarga</label>
                 <select name="status_keluarga" id="status_keluarga" class="form-control @error('status_keluarga') is-invalid @enderror" onchange="handleStatus()">
                   <option>--Pilih Status Keluarga--</option>
@@ -100,6 +91,8 @@
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="status_anak">Status Anak</label>
                 <select name="status_anak" id="status_anak" class="form-control @error('status_anak') is-invalid @enderror" disabled>
@@ -112,9 +105,7 @@
                   <div class="alert alert-danger mt-2 p-2 mb-2">{{ $message }}</div>
                 @enderror
               </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="pendidikan">Pendidikan</label>
                 <select name="pendidikan" id="pendidikan" class="form-control @error('pendidikan') is-invalid @enderror">
                   <option>--Pilih Pendidikan--</option>
