@@ -77,10 +77,7 @@
                           <th>Tanggal Lahir</th>
                           <th>Tempat Lahir</th>
                           <th>Jenis Kelamin</th>
-                          <th>No. Handphone</th>
                           <th>Status Keluarga</th>
-                          <th>Status Anak</th>
-                          <th>Pendidikan</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -96,10 +93,7 @@
                           <td>{{ $family->tgl_lahir }}</td>
                           <td>{{ $family->tempat_lahir }}</td>
                           <td>{{ $family->jenis_kelamin }}</td>
-                          <td>{{ $family->no_hp }}</td>
                           <td>{{ $family->status_keluarga }}</td>
-                          <td>{{ $family->status_anak }}</td>
-                          <td>{{ $family->pendidikan }}</td>
                         </tr>
                         @endforeach
                       </tbody>
