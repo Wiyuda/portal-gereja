@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\FamilyMemberExport;
 use PDF;
 use App\Models\Sidi;
 use App\Models\Sector;
@@ -13,6 +14,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\goOut;
 use App\Models\Shift;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PrintController extends Controller
 {
@@ -33,7 +36,7 @@ class PrintController extends Controller
         $sectorsName = Sector::where('id', $request->sector)->first();
 
         $start = $validate['start'] . " " . "00:00:00";
-        $end = $validate['end'] . " " . "23:59:59";;
+        $end = $validate['end'] . " " . "23:59:59";
 
         if($request->data == 'Jemaat') {
             if($request->sector == 'All') {
@@ -44,8 +47,8 @@ class PrintController extends Controller
                     return $query->where('sector_id', $request->sector);
                 }))->get();
             }
-            $pdf = PDF::loadView('dashboard.print.print', compact('datas'))->setPaper('a4', 'landscape');
-            return $pdf->stream();
+
+            return Excel::download(new FamilyMemberExport($request), 'jemaat.xlsx');
         } elseif($request->data == 'Kawin') {
             if($request->sector == 'All') {
                 $datas = Married::whereBetween('created_at', [$start, $end])->get();
