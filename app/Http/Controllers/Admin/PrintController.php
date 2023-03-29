@@ -9,12 +9,10 @@ use App\Models\Sector;
 use App\Models\Baptism;
 use App\Models\Married;
 use App\Models\Monding;
-use App\Models\FamilyMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\goOut;
 use App\Models\Shift;
-use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PrintController extends Controller
@@ -39,14 +37,6 @@ class PrintController extends Controller
         $end = $validate['end'] . " " . "23:59:59";
 
         if($request->data == 'Jemaat') {
-            if($request->sector == 'All') {
-                $datas = FamilyMember::whereBetween('created_at', [$start, $end])->where('status', 'Hidup')->get();
-            } else {
-                $datas = FamilyMember::whereBetween('created_at', [$start, $end])->where('status', 'Hidup')->whereHas('families', (function($query) {
-                    global $request;
-                    return $query->where('sector_id', $request->sector);
-                }))->get();
-            }
 
             return Excel::download(new FamilyMemberExport($request), 'jemaat.xlsx');
         } elseif($request->data == 'Kawin') {
