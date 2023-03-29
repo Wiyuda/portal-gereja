@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-10 col-sm-12 col-12 text-center">
               <h4 class="fw-bold">HURIA KRISTEN BATAK PROTESTAN (HKBP)</h4>
-              <h5>HKBP BETHEL RESORT PERSIAPAN BETHEL RESORT PADANG BULAN DISTRIK X MEDAN ACEH</h5>
+              <h5>HKBP PERSIAPAN RESORT BETHEL RESORT PADANG BULAN DISTRIK X MEDAN ACEH</h5>
               <p>
                 Jl. Besar Tj, Selamat No. 168, Deli Serdang
                 <br>
@@ -64,7 +64,7 @@
           <img src="{{ url('./assets/images/logo200.png') }}" alt="Logo BPC" class="logo-bpc mt-2">
         </div>
         <div class="col-md-3 col-sm-6">
-          <h3 class="fw-bold">Abbout</h3>
+          <h3 class="fw-bold">About</h3>
           <a href="{{ route('developer') }}">Developer</a>
         </div>
         <div class="col-md-3 col-sm-12 col-12">
@@ -86,7 +86,7 @@
         </div>
         <div class="row text-center mt-5">
           <div class="col-12">
-            <p class="text-muted">Powered By Universitas Budi Darma Medan &copy; 2022 HKBP BETHEL RESORT PADANG BULAN DISTRIK X-MA</p>
+            <p class="text-muted">Powered By Universitas Budi Darma Medan &copy; 2022 HKBP PERSIAPAN RESORT BETHEL RESORT PADANG BULAN DISTRIK X MEDAN ACEH</p>
           </div>
         </div>
       </div>
