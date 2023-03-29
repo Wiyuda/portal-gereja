@@ -17,6 +17,16 @@ class FamilyMember extends Model
         return $this->belongsTo(Family::class, 'family_id');
     }
 
+    public function marrieds()
+    {
+        return $this->hasOne(Married::class, 'id');
+    }
+
+    public function baptism()
+    {
+        return $this->hasOne(Baptism::class, 'id');
+    }
+
     public function sidis()
     {
         return $this->hasOne(Sidi::class, 'id');

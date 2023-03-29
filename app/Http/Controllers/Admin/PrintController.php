@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\FamilyMemberExport;
 use PDF;
 use App\Models\Sidi;
 use App\Models\Sector;
 use App\Models\Baptism;
 use App\Models\Married;
 use App\Models\Monding;
-use App\Models\FamilyMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\goOut;
 use App\Models\Shift;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PrintController extends Controller
 {
@@ -33,19 +34,11 @@ class PrintController extends Controller
         $sectorsName = Sector::where('id', $request->sector)->first();
 
         $start = $validate['start'] . " " . "00:00:00";
-        $end = $validate['end'] . " " . "23:59:59";;
+        $end = $validate['end'] . " " . "23:59:59";
 
         if($request->data == 'Jemaat') {
-            if($request->sector == 'All') {
-                $datas = FamilyMember::whereBetween('created_at', [$start, $end])->where('status', 'Hidup')->get();
-            } else {
-                $datas = FamilyMember::whereBetween('created_at', [$start, $end])->where('status', 'Hidup')->whereHas('families', (function($query) {
-                    global $request;
-                    return $query->where('sector_id', $request->sector);
-                }))->get();
-            }
-            $pdf = PDF::loadView('dashboard.print.print', compact('datas'))->setPaper('a4', 'landscape');
-            return $pdf->stream();
+
+            return Excel::download(new FamilyMemberExport($request), 'jemaat.xlsx');
         } elseif($request->data == 'Kawin') {
             if($request->sector == 'All') {
                 $datas = Married::whereBetween('created_at', [$start, $end])->get();
