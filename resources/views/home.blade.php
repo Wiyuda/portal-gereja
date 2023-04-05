@@ -378,7 +378,7 @@
   @push('scripts')
     <script>
       const ctx = document.getElementById('myChart');
-
+      const family = {{$family->count()}}
       Chart.defaults.font.size = 15;
       new Chart(ctx, {
         type: 'doughnut',
@@ -390,7 +390,7 @@
           ],
           datasets: [{
             label: 'Jumlah Statistik',
-            data: [{{ $family_member }}, {{ $family }}, {{ $sintua }}],
+            data: [{{ $family_member }}, family , {{ $sintua }}],
             backgroundColor: [
               'rgb(255, 99, 132)',
               'rgb(54, 162, 235)',
