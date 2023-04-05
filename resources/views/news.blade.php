@@ -73,7 +73,7 @@
                         <img src="{{ url('storage/thumbnail/'. $report->thumbnail) }}" alt="Thumbnail" class="rounded card-img-top">
                         <a href="{{ route('read.show', $report->id) }}">
                           <div class="news-title text-center">
-                            <h5>Berita Pertama Kami Gereja HKBP Medan Huria Copyrigt With Wiyuda Pratama Mahardika MEdan Sumatera Utara</h5>
+                            <h5>{{ $report->title }}</h5>
                           </div>
                         </a>
                           <div class="news-time">
