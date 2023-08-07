@@ -297,7 +297,7 @@
               <h3 class="fw-bold">WARTA GEREJA</h3>
               <hr>
               <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="dataTable">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -343,7 +343,7 @@
               <h3 class="fw-bold">Data Jemaat Gereja</h3>
               <hr>
               <div class="table-responsive">
-                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-hover" id="jemaat" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -399,6 +399,13 @@
             hoverOffset: 4
           }]
         },
+      });
+
+      $(document).ready(function () {
+        $('#jemaat').DataTable({
+          "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+          "iDisplayLength": 10
+        });
       });
     </script>
   @endpush
