@@ -23,6 +23,6 @@ class PrintController extends Controller
             'sector' => 'required'
         ]);
 
-        return Excel::download(new FamilyMemberExport($request), 'jemaat.xlsx');
+        return Excel::download(new FamilyMemberExport($request), 'jemaat-gereja.xlsx');
     }
 }
