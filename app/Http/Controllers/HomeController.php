@@ -31,7 +31,7 @@ class HomeController extends Controller
         foreach($outs as $out) {
             array_push($outId, $out->family_member_id);
         }
-        $family_member = FamilyMember::with('families')->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->orderBy('id', 'desc')->get()->count();
+        $family_member = FamilyMember::with('family')->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->orderBy('id', 'desc')->get()->count();
         $family = Family::count();
         $families = Family::orderBy('id', 'desc')->get();
         $profile = Profile::first();
