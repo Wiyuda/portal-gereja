@@ -24,7 +24,7 @@ class FamilyMemberController extends Controller
         foreach($outs as $out) {
             array_push($outId, $out->family_member_id);
         }
-        $members = FamilyMember::with('families')->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->orderBy('id', 'desc')->get();
+        $members = FamilyMember::with('family')->where('status', 'Hidup')->whereNotIn('id', $shiftId)->whereNotIn('id', $outId)->orderBy('id', 'desc')->get();
         return view('dashboard.family-member.family', compact('members'));
     }
 

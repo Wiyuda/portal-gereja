@@ -12,9 +12,9 @@ class FamilyMember extends Model
 
     protected $fillable = ['family_id', 'nama', 'tgl_lahir', 'tempat_lahir', 'jenis_kelamin', 'no_hp', 'status_keluarga', 'status_anak', 'pendidikan', 'status', 'tahun', 'sector_id'];
 
-    public function families()
+    public function family()
     {
-        return $this->belongsTo(Family::class, 'family_id');
+        return $this->belongsTo(Family::class);
     }
 
     public function marrieds()

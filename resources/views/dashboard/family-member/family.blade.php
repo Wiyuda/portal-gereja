@@ -51,8 +51,8 @@
                 @foreach ($members as $member)
                   <tr>
                     <td>{{ $i++ }}</td>
-                    <td>{{ $member->families->keluarga }}</td>
-                    <td>{{$member->nama }}</td>
+                    <td>{{ $member->family->keluarga }}</td>
+                    <td>{{ $member->nama }}</td>
                     <td>{{ $member->tgl_lahir }}</td>
                     <td>{{ $member->tempat_lahir }}</td>
                     <td>{{ $member->jenis_kelamin }}</td>
